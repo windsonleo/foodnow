@@ -109,7 +109,32 @@ while($dadosprod = pg_fetch_assoc($sqlcat)){
 		
 		$endereco = new Endereco();
 		
-		$_SESSION['endereco'] = $endereco;
+	    $id=33;
+	    $log='rua da fantasia';
+	    $cid='Recife';
+	    $num='288';
+	    $cepaux='54420-450';
+
+	    $endereco->setid($id);
+	    $endereco->setlogradouro($log);
+	    $endereco->setcidade($cid);
+	    $endereco->setnumero($num);
+	    $endereco->setcep($cepaux);
+		
+	  $cliente = $_SESSION['cliente'];
+
+    	   $cliente->setendereco($endereco);
+		$endereco->setcliente($cliente);
+
+
+    $_SESSION['endereco_id'] = 0;
+   // echo 'endereco NAO setado : ' ;
+      $temendereco = false;
+
+      $_SESSION['temendereco'] = $temendereco;
+		
+	$_SESSION['endereco'] = $endereco;
+	$_SESSION['cliente']=$cliente;
 		
 		
 	}
@@ -127,13 +152,7 @@ while($dadosprod = pg_fetch_assoc($sqlcat)){
       $_SESSION['carrinho'] = $carrinho;
 
   }
-	$cliente->setendereco($endereco);
-	$endereco->setcliente($cliente);
-	$carrinho->setcliente($cliente);
-
-	    
-
-
+	
 
 
 }

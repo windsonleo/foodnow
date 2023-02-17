@@ -190,6 +190,20 @@ $_SESSION['existecliente']=$existecliente;
 
 
 }*/
+ 
+ 
+   if(isset($_SESSION['cliente'])){
+    $cliente = $_SESSION['cliente'];
+  //  echo 'cliente setado : ' .$cliente->getnome();
+  }else {
+    $cliente = new Cliente();
+    $id=22;
+    $nomecli='padrão';
+    $cliente->setid($id);
+    $cliente->setnome($nomecli);
+    $_SESSION['cliente']=$cliente;
+  //  echo 'cliente NAO setado : ' ;
+  }
 
 
 ?>

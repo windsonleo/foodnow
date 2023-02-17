@@ -39,7 +39,7 @@ $ativo = 1;
 $qtd = $_GET["qtd"];
 
 
-if(isset($_SESSION['carrinho'])) {
+/*if(isset($_SESSION['carrinho'])) {
 
 
 
@@ -133,7 +133,7 @@ if(isset($_SESSION['carrinho'])) {
 	    $_SESSION['endereco']=$endereco;
 
 
-  }
+  }*/
 
 
 
@@ -151,10 +151,29 @@ while($dadosprod = pg_fetch_assoc($sqlcat)){
   $item = new Item($itemnome,$itempreco,$itemqtd,$itemfoto,$idprod);
   $iditem = $item->guidv4();
   $item->setid($iditem);
+	
+	if(isset($_SESSION['carrinho'])) {
+		
+	$carrinho = $_SESSION["carrinho"];
+		
+	}
+	
+	if(isset($_SESSION['cliente'])){
+		
+	$cliente = $_SESSION["cliente"];
+		
+	}
+	
+	if(isset($_SESSION['endereco'])){
+		
+	 $endereco = $_SESSION["endereco"];
+		
+		
+	}
 
-  $carrinho = $_SESSION["carrinho"];
-    $cliente = $_SESSION["cliente"];
-    $endereco = $_SESSION["endereco"];
+  
+
+	
      $carrinho->setcliente($cliente);
   	$carrinho->addItens($item);
       $totalitenscarrinho = $carrinho -> CalcularTotalItens();
@@ -176,22 +195,6 @@ while($dadosprod = pg_fetch_assoc($sqlcat)){
 
   }
 
-	/*$_SESSION['carrinho'] = $carrinho;
-  
-	$_SESSION['totalitem'] = $totalitenscarrinho;
-	
-	$_SESSION['totalvalor'] = $totalvalorcarrinho;
-
-  	$_SESSION['cliente'] = $cliente;
-
-	$_SESSION['endereco'] = $endereco;*/
-
-
-
-
-}
-
-
 	$_SESSION['carrinho'] = $carrinho;
   
 	$_SESSION['totalitem'] = $totalitenscarrinho;
@@ -201,6 +204,12 @@ while($dadosprod = pg_fetch_assoc($sqlcat)){
   	$_SESSION['cliente'] = $cliente;
 
 	$_SESSION['endereco'] = $endereco;
+
+
+
+
+}
+
 
 
 

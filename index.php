@@ -1,13 +1,15 @@
 
+
+
+
+<!DOCTYPE html>
+
 <?php
  session_start();
  include "entidade/Carrinho.php";
 include "entidade/Endereco.php";
  include "entidade/Cliente.php";
 ?>
-
-
-<!DOCTYPE html>
 
 
 

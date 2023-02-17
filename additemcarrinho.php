@@ -51,11 +51,21 @@ while($dadosprod = pg_fetch_assoc($sqlcat)){
 		
 	$carrinho = $_SESSION["carrinho"];
 		
+	}else {
+		
+		$carrinho = new Carrinho();
+		 $_SESSION["carrinho"]=$carrinho;
+		
 	}
 	
 	if(isset($_SESSION['cliente'])){
 		
 	$cliente = $_SESSION["cliente"];
+		
+	}else{
+		
+		$cliente = new Cliente();
+		 $_SESSION["cliente"]=$cliente;
 		
 	}
 		
@@ -63,6 +73,12 @@ while($dadosprod = pg_fetch_assoc($sqlcat)){
 	if(isset($_SESSION['endereco'])){
 		
 	 $endereco = $_SESSION["endereco"];
+		
+		
+	}else{
+		
+		$endereco = new Endereco();
+		$_SESSION["endereco"] = $endereco;
 		
 		
 	}

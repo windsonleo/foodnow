@@ -16,7 +16,7 @@ $porta = "port=6973";
 // Create connection
 //$conn = mysqli_connect($servername, $username,$password,$dbname,$porta);
 
-$conn = pg_connect($servername, $porta , $dbname, $username , $password);
+$conn = pg_connect("$servername $porta $dbname $username $password");
 
 // Create connection
 //$conn = mysqli_connect($servername, $username);

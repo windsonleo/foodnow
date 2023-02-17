@@ -105,6 +105,13 @@ while($dadosprod = pg_fetch_assoc($sqlcat)){
 	 
 	    
 
+
+
+
+
+
+}
+
 	$_SESSION['carrinho'] = $carrinho;
   
 	$_SESSION['totalitem'] = $totalitenscarrinho;
@@ -113,11 +120,6 @@ while($dadosprod = pg_fetch_assoc($sqlcat)){
 
   	$_SESSION['cliente'] = $cliente;
 	$_SESSION['endereco']=$endereco;
-
-
-
-
-}
 
 
 

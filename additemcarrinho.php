@@ -48,7 +48,7 @@ while($dadosprod = pg_fetch_assoc($sqlcat)){
 	
 	
 	
-	if(isset($_SESSION['carrinho'])) {
+	
 		
 	$carrinho = $_SESSION['carrinho'];
 	$carrinho->addItens($item);
@@ -60,26 +60,6 @@ while($dadosprod = pg_fetch_assoc($sqlcat)){
 	 $_SESSION['totalvalor'] = $totalvalorcarrinho;
         $_SESSION['totalitem'] = $totalitenscarrinho ;
 		
-	}else {
-		
-		$carrinho = new Carrinho();
-		$carrinho->addItens($item);
-	$totalitenscarrinho = $carrinho -> CalcularTotalItens();
-        $totalvalorcarrinho = $carrinho -> CalcularTotal();
-  	$carrinho->settotalitens($totalitenscarrinho);
-  	$carrinho->settotalvalor($totalvalorcarrinho);
-	$_SESSION['carrinho'] =  $carrinho;
-	
-		
-	$_SESSION['totalvalor'] = $totalvalorcarrinho;
-        $_SESSION['totalitem'] = $totalitenscarrinho ;
-	
-		  
-  
-		
-	}
-	
-	if(isset($_SESSION['cliente'])){
 		
 	$cliente = $_SESSION['cliente'];
 	$carrinho = $_SESSION['carrinho'];
@@ -88,39 +68,8 @@ while($dadosprod = pg_fetch_assoc($sqlcat)){
 	$_SESSION['carrinho'] = $carrinho;
 		
 		
-	}else{
-		
-		$cliente = new Cliente();
-		$nomcli="padraointeno";
-		$cliente->setnome($nomcli);
-		$carrinho = $_SESSION['carrinho'];
-		$carrinho->setcliente($cliente);
-		$_SESSION['cliente']=$cliente;
-		$_SESSION['carrinho'] =  $carrinho;
-		
-	}
-		
-	
-	if(isset($_SESSION['endereco'])){
-		
 	 $endereco = $_SESSION['endereco'];
 		
-		
-	}else{
-		
-		$endereco = new Endereco();
-		
-	    $id=33;
-	    $log='rua da fantasia';
-	    $cid='Recife';
-	    $num='288';
-	    $cepaux='54420-450';
-
-	    $endereco->setid($id);
-	    $endereco->setlogradouro($log);
-	    $endereco->setcidade($cid);
-	    $endereco->setnumero($num);
-	    $endereco->setcep($cepaux);
 		
 	  $cliente = $_SESSION['cliente'];
 
@@ -138,12 +87,7 @@ while($dadosprod = pg_fetch_assoc($sqlcat)){
 	$_SESSION['cliente']=$cliente;
 		
 		
-	}
-	
-    
- 
-
-
+$carrinho = $_SESSION['carrinho'];
 
   if($carrinho->getid()==null){
 

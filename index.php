@@ -65,7 +65,7 @@ $_SESSION['existecliente']=$existecliente;
 
 
 
-/*if(isset($_SESSION['carrinho'])) {
+if(isset($_SESSION['carrinho'])) {
 
 
 
@@ -190,7 +190,7 @@ $_SESSION['existecliente']=$existecliente;
     $_SESSION['usuario_nome']='usu padrao';
 
 
-}*/
+}
 
 
 ?>

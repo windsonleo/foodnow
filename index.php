@@ -68,7 +68,7 @@ $_SESSION['existecliente']=$existecliente;
 
 
 
-/*if(isset($_SESSION['carrinho'])) {
+if(isset($_SESSION['carrinho'])) {
 
 
 
@@ -97,7 +97,7 @@ $_SESSION['existecliente']=$existecliente;
   }
 
 
-    if(isset($_SESSION['tel'])){
+  /*  if(isset($_SESSION['tel'])){
 
     $tel = $_SESSION['tel'];
 

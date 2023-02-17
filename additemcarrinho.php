@@ -233,13 +233,6 @@ while($dadosprod = pg_fetch_assoc($sqlcat)){
 
       $carrinho->setid($idcarrinho);
 
-  }else {
-	  
-	  
-
-    
-
-
   }
 	$cliente->setendereco($endereco);
 	$endereco->setcliente($cliente);
@@ -249,6 +242,13 @@ while($dadosprod = pg_fetch_assoc($sqlcat)){
 	 
 	    
 
+
+
+
+
+
+}
+
 	$_SESSION['carrinho'] = $carrinho;
   
 	$_SESSION['totalitem'] = $totalitenscarrinho;
@@ -257,11 +257,6 @@ while($dadosprod = pg_fetch_assoc($sqlcat)){
 
   	$_SESSION['cliente'] = $cliente;
 	$_SESSION['endereco']=$endereco;
-
-
-
-
-}
 
 
 

@@ -183,6 +183,7 @@ if(isset($_SESSION['carrinho'])) {
 
   }else {
 
+	     $cliente = $_SESSION['cliente'];
     $endereco = new Endereco();
     $id=33;
     $log='rua da fantasia';
@@ -198,7 +199,7 @@ if(isset($_SESSION['carrinho'])) {
 
     $cliente->setendereco($endereco);
 
-
+$_SESSION['cliente'] =  $cliente;
 
     $_SESSION['endereco']=$endereco;
     $_SESSION['endereco_id'] = 0;

@@ -2,12 +2,14 @@
 
 //$teste = $_GET;
 
+session_start();
+
 include "entidade/Item.php";
 include "entidade/Carrinho.php";
 include "entidade/Cliente.php";
 include "entidade/Endereco.php";
 
-session_start();
+
 
 
 
@@ -57,7 +59,7 @@ while($dadosprod = pg_fetch_assoc($sqlcat)){
   $iditem = $item->guidv4();
   $item->setid($iditem);
 
-  	$carrinho = $_SESSION["carrinho"];
+  $carrinho = $_SESSION["carrinho"];
     $cliente = $_SESSION["cliente"];
     $endereco = $_SESSION["endereco"];
      $carrinho->setcliente($cliente);

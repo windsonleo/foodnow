@@ -10,7 +10,7 @@ session_start();
 session_destroy();
 
 //https://foodnoww.000webhostapp.com/
-header('Location: http://foodnow.com/');
+header('Location: https://foodnow-production.up.railway.app/');
 
 
 

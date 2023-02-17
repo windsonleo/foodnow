@@ -53,7 +53,20 @@ while($dadosprod = pg_fetch_assoc($sqlcat)){
 	}else {
 		
 		$carrinho = new Carrinho();
-		 $_SESSION["carrinho"]=$carrinho;
+	
+		  
+    
+     $totalitenscarrinho = 0 ;
+
+     $totalvalorcarrinho = 0.00;
+
+
+       $_SESSION['carrinho'] =  $carrinho;
+
+
+       $_SESSION['totalvalor'] = $totalvalorcarrinho;
+
+       $_SESSION['totalitem'] = $totalitenscarrinho ;
 		
 	}
 	
@@ -102,24 +115,24 @@ while($dadosprod = pg_fetch_assoc($sqlcat)){
 	$carrinho->setcliente($cliente);
 	//$carrinho->setendereco($endereco);
 	
-	 
+	 $_SESSION['carrinho'] = $carrinho;
 	    
-
-
-
-
-
-
-}
-
-	$_SESSION['carrinho'] = $carrinho;
-  
 	$_SESSION['totalitem'] = $totalitenscarrinho;
 	
 	$_SESSION['totalvalor'] = $totalvalorcarrinho;
 
   	$_SESSION['cliente'] = $cliente;
 	$_SESSION['endereco']=$endereco;
+
+
+
+}
+
+	
+  
+
+
+
 
 
 

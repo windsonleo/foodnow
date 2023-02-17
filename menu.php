@@ -11,7 +11,7 @@ $servername = "containers-us-west-54.railway.app";
 $username = "postgres";
 $password = "GRdKW3TVxT3NuZwQa0EZ";
 $dbname="railway";
-$porta = 6973;
+$porta = '6973';
 
 // Create connection
 $conn = mysqli_connect($servername, $username,$password,$dbname,$porta);

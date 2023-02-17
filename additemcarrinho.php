@@ -43,6 +43,8 @@ $cliente = $_SESSION["cliente"];
 
 $carrinho = $_SESSION["carrinho"];
 
+$endereco = $_SESSION["endereco"];
+
 
 
   $sqlcat = pg_query($conn,"select * from produto where id = {$id}") or die("Erro");
@@ -59,9 +61,9 @@ while($dadosprod = pg_fetch_assoc($sqlcat)){
   $iditem = $item->guidv4();
   $item->setid($iditem);
 
-  $carrinho = $_SESSION["carrinho"];
-    $cliente = $_SESSION["cliente"];
-    $endereco = $_SESSION["endereco"];
+  //$carrinho = $_SESSION["carrinho"];
+   // $cliente = $_SESSION["cliente"];
+  //  $endereco = $_SESSION["endereco"];
      $carrinho->setcliente($cliente);
   	$carrinho->addItens($item);
       $totalitenscarrinho = $carrinho -> CalcularTotalItens();
@@ -89,9 +91,9 @@ while($dadosprod = pg_fetch_assoc($sqlcat)){
 	
 	$_SESSION['totalvalor'] = $totalvalorcarrinho;
 
-  $_SESSION['cliente'] = $cliente;
+  	$_SESSION['cliente'] = $cliente;
 
-$_SESSION['endereco'] = $endereco;
+	$_SESSION['endereco'] = $endereco;
 
 
 

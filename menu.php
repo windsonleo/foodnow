@@ -2,13 +2,22 @@
 
     <?php 
 //include "conexao.php";
-$servername = "localhost";
+/*$servername = "localhost";
 $username = "root";
 $password = "";
-$dbname="cardapio";
+$dbname="cardapio";*/
+
+$servername = "hcontainers-us-west-31.railway.app";
+$username = "root";
+$password = "lW8y65JQW7StMH5N2aGL";
+$dbname="railway";
+$porta = 7488;
 
 // Create connection
-$conn = mysqli_connect($servername, $username);
+$conn = mysqli_connect($servername, $username,$password,$dbname,$porta);
+
+// Create connection
+//$conn = mysqli_connect($servername, $username);
 $banco = mysqli_select_db($conn,$dbname);
 mysqli_set_charset($conn,'utf8');
 // Check connection

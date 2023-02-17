@@ -1,20 +1,10 @@
 
 <?php
-// Iniciando uma sessão
-
   include "entidade/Carrinho.php";
   include "entidade/Item.php";
   include "entidade/Cliente.php";
   include "entidade/Endereco.php";
-
-session_start();
- 
-// Guardando dados na sessão
-$carrinho = $_SESSION["carrinho"];
-$cliente = $_SESSION["cliente"] ;
-$endereco = $_SESSION["endereco"];
-
-
+  session_start();
 ?>
 
 

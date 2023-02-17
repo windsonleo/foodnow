@@ -7,10 +7,6 @@
 include "entidade/Endereco.php";
  include "entidade/Cliente.php";
 
-$carrinho = $_SESSION["carrinho"];
-$cliente = $_SESSION["cliente"] ;
-$endereco = $_SESSION["endereco"];
-
 
  
 ?>

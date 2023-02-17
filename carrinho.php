@@ -153,7 +153,9 @@ if(isset($_SESSION['carrinho'])) {
   //  echo 'cliente setado : ' .$cliente->getnome();
 
 
-  }else {
+  }
+	
+/*else {
 
     $cliente = new Cliente();
     $id=22;
@@ -164,7 +166,7 @@ if(isset($_SESSION['carrinho'])) {
   //  echo 'cliente NAO setado : ' ;
 
 
-  }
+  }*/
 
 
     if(isset($_SESSION['endereco'])){

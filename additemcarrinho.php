@@ -1,9 +1,10 @@
 <?php
+session_start();
 include "entidade/Item.php";
 include "entidade/Carrinho.php";
 include "entidade/Cliente.php";
 include "entidade/Endereco.php";
-session_start();
+
 
 
 
@@ -13,15 +14,8 @@ $password = "password=GRdKW3TVxT3NuZwQa0EZ";
 $dbname="dbname=railway";
 $porta = "port=6973";
 
-// Create connection
-//$conn = mysqli_connect($servername, $username,$password,$dbname,$porta);
-
 $conn = pg_connect("$servername $porta $dbname $username $password");
 
-// Create connection
-//$conn = mysqli_connect($servername, $username);
-//$banco = mysqli_select_db($conn,$dbname);
-//mysqli_set_charset($conn,'utf8');
 // Check connection
 if (!$conn) {
   die("Falha na Conexao: " . pg_connection_status($conn));
@@ -31,104 +25,6 @@ if (!$conn) {
 $id = $_GET["idprod"];
 $ativo = 1;
 $qtd = $_GET["qtd"];
-
-
-/*if(isset($_SESSION['carrinho'])) {
-
-
-
-     $carrinho = $_SESSION['carrinho'];
-     $totalitenscarrinho = $_SESSION['totalitem'];
-     $totalvalorcarrinho = $_SESSION['totalvalor'];
-
-
-
-  } else {
-
-
-      $carrinho =  new Carrinho();
-    
-     $totalitenscarrinho = 0 ;
-
-     $totalvalorcarrinho = 0.00;
-
-
-       $_SESSION['carrinho'] =  $carrinho;
-
-
-       $_SESSION['totalvalor'] = $totalvalorcarrinho;
-
-       $_SESSION['totalitem'] = $totalitenscarrinho ;
-
-
-
-
-  }
-
-
-
-
-
-
-  if(isset($_SESSION['cliente'])){
-
-    $cliente = $_SESSION['cliente'];
-
-  //  echo 'cliente setado : ' .$cliente->getnome();
-
-
-  }else {
-
-    $cliente = new Cliente();
-    $id=22;
-    $nomecli='padrão';
-    $cliente->setid($id);
-    $cliente->setnome($nomecli);
-    $_SESSION['cliente']=$cliente;
-  //  echo 'cliente NAO setado : ' ;
-
-
-  }
-
-
-    if(isset($_SESSION['endereco'])){
-
-    $endereco = $_SESSION['endereco'];
-
-   // echo 'endereco setado : ' .$endereco ;
-
-   // $temendereco = $_SESSION['temendereco'];
-    // $carrinho->setcliente($cliente);
-   //  $endereco_id = $_SESSION['endereco_id'];
-     $cliente->setendereco($endereco);
-	$_SESSION['cliente']=$cliente;
-	    $_SESSION['endereco']=$endereco;
-
-
-  }else {
-
-    $endereco = new Endereco();
-    $id=33;
-    $log='rua da fantasia';
-    $cid='Recife';
-    $num='288';
-    $cepaux='54420-450';
-
-    $endereco->setid($id);
-    $endereco->setlogradouro($log);
-    $endereco->setcidade($cid);
-    $endereco->setnumero($num);
-    $endereco->setcep($cepaux);
-
-    $cliente->setendereco($endereco);
-	$endereco->setcliente($cliente);
-	    
-	    $_SESSION['cliente']=$cliente;
-	    $_SESSION['endereco']=$endereco;
-
-
-  }*/
-
 
 
 
@@ -163,9 +59,6 @@ while($dadosprod = pg_fetch_assoc($sqlcat)){
 		
 	}
 		
-		
-		
-	
 	
 	if(isset($_SESSION['endereco'])){
 		
@@ -173,9 +66,6 @@ while($dadosprod = pg_fetch_assoc($sqlcat)){
 		
 		
 	}
-
-  
-
 	
      $carrinho->setcliente($cliente);
      $carrinho->addItens($item);

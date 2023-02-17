@@ -7,17 +7,16 @@ $username = "root";
 $password = "";
 $dbname="cardapio";*/
 
-$servername = "containers-us-west-54.railway.app";
-$username = "postgres";
-$password = "GRdKW3TVxT3NuZwQa0EZ";
-$dbname="railway";
-$porta = 6973;
+$servername = "host=containers-us-west-54.railway.app";
+$username = "user=postgres";
+$password = "password=GRdKW3TVxT3NuZwQa0EZ";
+$dbname="dbname=railway";
+$porta = "port=6973";
 
 // Create connection
 //$conn = mysqli_connect($servername, $username,$password,$dbname,$porta);
 
-$conn = pg_connect("host=$servername port=$porta dbname=$dbname " +
-                                     "user=$username password=$password");
+$conn = pg_connect($servername, $porta , $dbname, $username , $password);
 
 // Create connection
 //$conn = mysqli_connect($servername, $username);

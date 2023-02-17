@@ -125,7 +125,7 @@ if(isset($_SESSION['carrinho'])) {
 
     $cliente = new Cliente();
     $id=22;
-    $nomecli='padrão';
+    $nomecli='padrãoo';
     $cliente->setid($id);
     $cliente->setnome($nomecli);
     $_SESSION['cliente']=$cliente;
@@ -162,7 +162,7 @@ if(isset($_SESSION['carrinho'])) {
     $endereco->setnumero($num);
     $endereco->setcep($cepaux);
 
-   // $cliente->setendereco($endereco);
+    $cliente->setendereco($endereco);
 
 
 

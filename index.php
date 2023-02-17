@@ -93,7 +93,7 @@ if(isset($_SESSION['carrinho'])) {
 
        $_SESSION['totalvalor'] = $totalvalorcarrinho;
 
-       $_SESSION['totalitem'] = $totalitenscarrinho ;
+       $_SESSION['totalitem'] = $totalitenscarrinho ; 
   }
 
 
@@ -126,7 +126,7 @@ if(isset($_SESSION['carrinho'])) {
 
     $cliente = new Cliente();
     $id=22;
-    $nomecli='padrãoo';
+    $nomecli='padrão';
     $cliente->setid($id);
     $cliente->setnome($nomecli);
     $_SESSION['cliente']=$cliente;

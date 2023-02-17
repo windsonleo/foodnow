@@ -244,7 +244,7 @@ while($dadosprod = pg_fetch_assoc($sqlcat)){
 	$cliente->setendereco($endereco);
 	$endereco->setcliente($cliente);
 	$carrinho->setcliente($cliente);
-	$carrinho->setendereco($endereco);
+	//$carrinho->setendereco($endereco);
 	
 	 
 	    

@@ -151,7 +151,7 @@ if(isset($_SESSION['carrinho'])) {
     $temendereco = $_SESSION['temendereco'];
     // $carrinho->setcliente($cliente);
      $endereco_id = $_SESSION['endereco_id'];
-     $cliente->setendereco($endereco);
+   //  $cliente->setendereco($endereco);
 
 
   }else {
@@ -169,7 +169,7 @@ if(isset($_SESSION['carrinho'])) {
     $endereco->setnumero($num);
     $endereco->setcep($cepaux);
 
-    $cliente->setendereco($endereco);
+   // $cliente->setendereco($endereco);
 
 
 

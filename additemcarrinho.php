@@ -1,14 +1,8 @@
 <?php
-
-//$teste = $_GET;
-
-
-
 include "entidade/Item.php";
 include "entidade/Carrinho.php";
 include "entidade/Cliente.php";
 include "entidade/Endereco.php";
-
 session_start();
 
 

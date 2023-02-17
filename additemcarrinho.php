@@ -152,15 +152,39 @@ while($dadosprod = pg_fetch_assoc($sqlcat)){
   $iditem = $item->guidv4();
   $item->setid($iditem);
 	
+	
+	
+	
+	
+	
 	if(isset($_SESSION['carrinho'])) {
 		
 	$carrinho = $_SESSION["carrinho"];
 		
+	}else {
+		
+      $carrinho =  new Carrinho();
+
+
+       $_SESSION['carrinho'] =  $carrinho;
+
+			
 	}
 	
 	if(isset($_SESSION['cliente'])){
 		
 	$cliente = $_SESSION["cliente"];
+		
+	}else {
+		
+	   $cliente = new Cliente();
+	    $id=22;
+	    $nomecli='padrão';
+	    $cliente->setid($id);
+	    $cliente->setnome($nomecli);
+	    $_SESSION['cliente']=$cliente;
+		
+		
 		
 	}
 	
@@ -169,13 +193,34 @@ while($dadosprod = pg_fetch_assoc($sqlcat)){
 	 $endereco = $_SESSION["endereco"];
 		
 		
+	}else {
+		
+		
+	    $endereco = new Endereco();
+	    $id=33;
+	    $log='rua da fantasia';
+	    $cid='Recife';
+	    $num='288';
+	    $cepaux='54420-450';
+
+	    $endereco->setid($id);
+	    $endereco->setlogradouro($log);
+	    $endereco->setcidade($cid);
+	    $endereco->setnumero($num);
+	    $endereco->setcep($cepaux);
+		
+	$_SESSION['endereco'] = $endereco;
+
+
+		
+		
 	}
 
   
 
 	
      $carrinho->setcliente($cliente);
-  	$carrinho->addItens($item);
+     $carrinho->addItens($item);
       $totalitenscarrinho = $carrinho -> CalcularTotalItens();
       $totalvalorcarrinho = $carrinho -> CalcularTotal();
   $carrinho->settotalitens($totalitenscarrinho);
@@ -189,11 +234,20 @@ while($dadosprod = pg_fetch_assoc($sqlcat)){
       $carrinho->setid($idcarrinho);
 
   }else {
+	  
+	  
 
-    $carrinho->setcliente($cliente);
+    
 
 
   }
+	$cliente->setendereco($endereco);
+	$endereco->setcliente($cliente);
+	$carrinho->setcliente($cliente);
+	$carrinho->setendereco($endereco);
+	
+	 
+	    
 
 	$_SESSION['carrinho'] = $carrinho;
   
@@ -202,59 +256,13 @@ while($dadosprod = pg_fetch_assoc($sqlcat)){
 	$_SESSION['totalvalor'] = $totalvalorcarrinho;
 
   	$_SESSION['cliente'] = $cliente;
-
-	$_SESSION['endereco'] = $endereco;
+	$_SESSION['endereco']=$endereco;
 
 
 
 
 }
 
-
-
-
-/*if(!isset($_SESSION['carrinho'])){
-
-//adiciona o item
-
-	$carrinho =new Carrinho();
-
-	$carrinho->addItens($item);
-
-    $_SESSION['carrinho'] = $carrinho;
-    $totalitenscarrinho = $carrinho -> CalcularTotalItens();
-	$_SESSION['totalitem'] = $totalitenscarrinho;
-
-
-}else {
-
-
-    $carrinho = $_SESSION['carrinho'];
-    $carrinho -> addItens($item);
-    $totalitenscarrinho = $carrinho -> CalcularTotalItens();
-	$_SESSION['totalitem'] = $totalitenscarrinho;
- 	$_SESSION['carrinho'] = $carrinho;
-
-
-}
-
-if(!isset($_SESSION['cliente'])){
-
-//adiciona o item
-
-	$cliente = "dinho";
-
-    $_SESSION['cliente'] = $cliente;
-
-
-}else {
-
-
-    $cliente = $_SESSION['cliente'];
-    $carrinho -> setcliente($cliente);
-	$_SESSION['cliente'] = $cliente;
-
-}*/
 
 
  //header('Location: https://foodnoww.000webhostapp.com/');

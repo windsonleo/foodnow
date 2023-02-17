@@ -61,7 +61,7 @@ $dados2tot = pg_num_fields($sql2);
 
 <?php
 
- while($dadoscat = mysqli_fetch_assoc($sql2)){
+ while($dadoscat = pg_fetch_assoc($sql2)){
   $id = $dadoscat['id'];
   $ativo = $dadoscat['ativo'];
   $nome = $dadoscat['nome'];
@@ -88,7 +88,7 @@ $dados2tot = pg_num_fields($sql2);
 
           <?php
 
- while($dados = mysqli_fetch_assoc($sql)){
+ while($dados = pg_fetch_assoc($sql)){
   $id = $dados['id'];
   $ativo = $dados['ativo'];
   $nome = $dados['nome'];
@@ -98,9 +98,9 @@ $dados2tot = pg_num_fields($sql2);
   $datareg = $dados['dataregistro'];
    $foto = $dados['foto'];
 
-  $sqlcat = mysqli_query($conn,"select * from categoria where id = {$categoria_id}") or die("Erro");
+  $sqlcat = pg_query($conn,"select * from categoria where id = {$categoria_id}") or die("Erro");
 
-while($dadoscat = mysqli_fetch_assoc($sqlcat)){
+while($dadoscat = pg_fetch_assoc($sqlcat)){
 
   $categorianome = $dadoscat['nome'];
 

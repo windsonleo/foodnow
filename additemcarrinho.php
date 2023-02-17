@@ -1,9 +1,10 @@
 <?php
-session_start();
 include "entidade/Carrinho.php";
 include "entidade/Item.php";
 include "entidade/Cliente.php";
 include "entidade/Endereco.php";
+session_start();
+
 
 
 
@@ -49,7 +50,7 @@ while($dadosprod = pg_fetch_assoc($sqlcat)){
 	
 	if(isset($_SESSION['carrinho'])) {
 		
-	$carrinho = $_SESSION["carrinho"];
+	$carrinho = $_SESSION['carrinho'];
 	$carrinho->addItens($item);
 	$totalitenscarrinho = $carrinho -> CalcularTotalItens();
         $totalvalorcarrinho = $carrinho -> CalcularTotal();
@@ -81,29 +82,29 @@ while($dadosprod = pg_fetch_assoc($sqlcat)){
 	
 	if(isset($_SESSION['cliente'])){
 		
-	$cliente = $_SESSION["cliente"];
+	$cliente = $_SESSION['cliente'];
 	$carrinho->setcliente($cliente);
-	$_SESSION["cliente"]=$cliente;
+	$_SESSION['cliente']=$cliente;
 	$_SESSION['carrinho'] =  $carrinho;
 		
 		
 	}else{
 		
 		$cliente = new Cliente();
-		 $_SESSION["cliente"]=$cliente;
+		 $_SESSION['cliente']=$cliente;
 		
 	}
 		
 	
 	if(isset($_SESSION['endereco'])){
 		
-	 $endereco = $_SESSION["endereco"];
+	 $endereco = $_SESSION['endereco'];
 		
 		
 	}else{
 		
 		$endereco = new Endereco();
-		$_SESSION["endereco"] = $endereco;
+		$_SESSION['endereco'] = $endereco;
 		
 		
 	}

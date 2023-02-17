@@ -75,16 +75,6 @@ if(isset($_SESSION['carrinho'])) {
 
 
 
-  } if(isset($_SESSION['carrinho'])) {
-
-
-
-     $carrinho = $_SESSION['carrinho'];
-     $totalitenscarrinho = $_SESSION['totalitem'];
-     $totalvalorcarrinho = $_SESSION['totalvalor'];
-
-
-
   } else {
 
 

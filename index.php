@@ -1,9 +1,4 @@
 
-
-
-
-<!DOCTYPE html>
-
 <?php
 
  include "entidade/Carrinho.php";
@@ -11,6 +6,11 @@ include "entidade/Endereco.php";
  include "entidade/Cliente.php";
  session_start();
 ?>
+
+
+<!DOCTYPE html>
+
+
 
 
 
@@ -68,7 +68,7 @@ $_SESSION['existecliente']=$existecliente;
 
 
 
-if(isset($_SESSION['carrinho'])) {
+/*if(isset($_SESSION['carrinho'])) {
 
 
 
@@ -189,7 +189,7 @@ if(isset($_SESSION['carrinho'])) {
     $_SESSION['usuario_nome']='usu padrao';
 
 
-}
+}*/
 
 
 ?>

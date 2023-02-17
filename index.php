@@ -18,7 +18,7 @@ if(isset(!$_SESSION['cliente'])){
 
 if(isset(!$_SESSION['endereco'])){
  $endereco = new Endereco();
- $_SESSION['endereco']=$endereco
+ $_SESSION['endereco']=$endereco;
 }
 
 ?>

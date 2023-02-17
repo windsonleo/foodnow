@@ -161,57 +161,21 @@ while($dadosprod = pg_fetch_assoc($sqlcat)){
 		
 	$carrinho = $_SESSION["carrinho"];
 		
-	}else {
-		
-      $carrinho =  new Carrinho();
-
-
-       $_SESSION['carrinho'] =  $carrinho;
-
-			
 	}
 	
 	if(isset($_SESSION['cliente'])){
 		
 	$cliente = $_SESSION["cliente"];
 		
-	}else {
-		
-	   $cliente = new Cliente();
-	    $id=22;
-	    $nomecli='padrão';
-	    $cliente->setid($id);
-	    $cliente->setnome($nomecli);
-	    $_SESSION['cliente']=$cliente;
-		
-		
-		
 	}
+		
+		
+		
+	
 	
 	if(isset($_SESSION['endereco'])){
 		
 	 $endereco = $_SESSION["endereco"];
-		
-		
-	}else {
-		
-		
-	    $endereco = new Endereco();
-	    $id=33;
-	    $log='rua da fantasia';
-	    $cid='Recife';
-	    $num='288';
-	    $cepaux='54420-450';
-
-	    $endereco->setid($id);
-	    $endereco->setlogradouro($log);
-	    $endereco->setcidade($cid);
-	    $endereco->setnumero($num);
-	    $endereco->setcep($cepaux);
-		
-	$_SESSION['endereco'] = $endereco;
-
-
 		
 		
 	}
@@ -242,13 +206,6 @@ while($dadosprod = pg_fetch_assoc($sqlcat)){
 	 
 	    
 
-
-
-
-
-
-}
-
 	$_SESSION['carrinho'] = $carrinho;
   
 	$_SESSION['totalitem'] = $totalitenscarrinho;
@@ -257,6 +214,13 @@ while($dadosprod = pg_fetch_assoc($sqlcat)){
 
   	$_SESSION['cliente'] = $cliente;
 	$_SESSION['endereco']=$endereco;
+
+
+
+
+}
+
+
 
 
 

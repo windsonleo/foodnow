@@ -103,9 +103,9 @@ if(isset($_SESSION['carrinho'])) {
 
    // echo 'endereco setado : ' .$endereco ;
 
-    $temendereco = $_SESSION['temendereco'];
+   // $temendereco = $_SESSION['temendereco'];
     // $carrinho->setcliente($cliente);
-     $endereco_id = $_SESSION['endereco_id'];
+   //  $endereco_id = $_SESSION['endereco_id'];
      $cliente->setendereco($endereco);
 	$_SESSION['cliente']=$cliente;
 	    $_SESSION['endereco']=$endereco;

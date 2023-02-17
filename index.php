@@ -6,17 +6,17 @@ include "entidade/Endereco.php";
  include "entidade/Cliente.php";
  session_start();
 
-if(isset(!$_SESSION['carrniho'])){
+if(!isset($_SESSION['carrniho'])){
  $carrinho= new Carrinho();
  $_SESSION['carrinho'] = $carrinho;
 }
 
-if(isset(!$_SESSION['cliente'])){
+if(!isset(!$_SESSION['cliente'])){
  $cliente= new Cliente();
  $_SESSION['cliente'] = $cliente;
 }
 
-if(isset(!$_SESSION['endereco'])){
+if(!isset(!$_SESSION['endereco'])){
  $endereco = new Endereco();
  $_SESSION['endereco']= $endereco;}
 

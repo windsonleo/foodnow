@@ -75,27 +75,7 @@ if(isset($_SESSION['carrinho'])) {
 
 
 
-  } else {
-
-
-      $carrinho =  new Carrinho();
-    
-     $totalitenscarrinho = 0 ;
-
-     $totalvalorcarrinho = 0.00;
-
-
-       $_SESSION['carrinho'] =  $carrinho;
-
-
-       $_SESSION['totalvalor'] = $totalvalorcarrinho;
-
-       $_SESSION['totalitem'] = $totalitenscarrinho ;
-
-
-
-
-  }
+  } 
 
 
     if(isset($_SESSION['tel'])){
@@ -194,15 +174,6 @@ if(isset($_SESSION['carrinho'])) {
 
 
 ?>
-
-
-
-
-
-
-
-
-
 
 <head>
   <!-- Basic -->

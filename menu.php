@@ -11,26 +11,29 @@ $servername = "containers-us-west-54.railway.app";
 $username = "postgres";
 $password = "GRdKW3TVxT3NuZwQa0EZ";
 $dbname="railway";
-$porta = '6973';
+$porta = 6973;
 
 // Create connection
-$conn = mysqli_connect($servername, $username,$password,$dbname,$porta);
+//$conn = mysqli_connect($servername, $username,$password,$dbname,$porta);
+
+$conn = pg_connect("host=$servername port=$porta dbname=$dbname " +
+                                     "user=$username password=$password");
 
 // Create connection
 //$conn = mysqli_connect($servername, $username);
-$banco = mysqli_select_db($conn,$dbname);
-mysqli_set_charset($conn,'utf8');
+//$banco = mysqli_select_db($conn,$dbname);
+//mysqli_set_charset($conn,'utf8');
 // Check connection
 if (!$conn) {
   die("Falha na Conexao: " . mysqli_connect_error());
 }
 
-$sql = mysqli_query($conn,"select * from produto") or die("Erro");
-$sql2 = mysqli_query($conn,"select * from categoria") or die("Erro");
+$sql = pg_query($conn,"select * from produto") or die("Erro");
+$sql2 = pg_query($conn,"select * from categoria") or die("Erro");
 
 
-$dadostot = mysqli_num_rows($sql);
-$dados2tot = mysqli_num_rows($sql2);
+$dadostot = pg_num_fields($sql);
+$dados2tot = pg_num_fields($sql2);
 
 
  ?>

@@ -50,7 +50,7 @@ foreach ($itens as $item) {
 
 
    //https://foodnoww.000webhostapp.com/carrinho.php
-    header('Location: http://foodnow.com/carrinho.php');
+    header('Location: https://foodnow-production.up.railway.app/carrinho.php');
     exit();
 
 

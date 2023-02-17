@@ -11,18 +11,25 @@ session_start();
 
 
 
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "cardapio";
+$servername = "host=containers-us-west-54.railway.app";
+$username = "user=postgres";
+$password = "password=GRdKW3TVxT3NuZwQa0EZ";
+$dbname="dbname=railway";
+$porta = "port=6973";
 
 // Create connection
-$conn = mysqli_connect($servername, $username, $password, $dbname);
+//$conn = mysqli_connect($servername, $username,$password,$dbname,$porta);
+
+$conn = pg_connect("$servername $porta $dbname $username $password");
+
+// Create connection
+//$conn = mysqli_connect($servername, $username);
+//$banco = mysqli_select_db($conn,$dbname);
+//mysqli_set_charset($conn,'utf8');
 // Check connection
 if (!$conn) {
-  die("Falha na Conexao: " . mysqli_connect_error());
+  die("Falha na Conexao: " . pg_connection_status($conn));
 }
-
 
 
 $id = $_GET["idprod"];
@@ -36,9 +43,9 @@ $carrinho = $_SESSION["carrinho"];*/
 
 
 
-  $sqlcat = mysqli_query($conn,"select * from produto where id = {$id}") or die("Erro");
+  $sqlcat = pg_query($conn,"select * from produto where id = {$id}") or die("Erro");
 
-while($dadosprod = mysqli_fetch_assoc($sqlcat)){
+while($dadosprod = pg_fetch_assoc($sqlcat)){
 
  $idprod = $dadosprod['id'];
   $itemnome = $dadosprod['nome'];
@@ -140,7 +147,7 @@ if(!isset($_SESSION['cliente'])){
 
  //header('Location: https://foodnoww.000webhostapp.com/');
 
-    header('Location: http://foodnow.com');
+    header('Location: https://foodnow-production.up.railway.app/');
     exit();
 
 

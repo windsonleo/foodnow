@@ -2,14 +2,14 @@
 
 //$teste = $_GET;
 
-session_start();
+
 
 include "entidade/Item.php";
 include "entidade/Carrinho.php";
 include "entidade/Cliente.php";
 include "entidade/Endereco.php";
 
-
+session_start();
 
 
 
@@ -39,9 +39,9 @@ $ativo = 1;
 $qtd = $_GET["qtd"];
 
 
-/*$cliente = $_SESSION["cliente"];
+$cliente = $_SESSION["cliente"];
 
-$carrinho = $_SESSION["carrinho"];*/
+$carrinho = $_SESSION["carrinho"];
 
 
 

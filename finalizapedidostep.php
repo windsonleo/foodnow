@@ -1,14 +1,9 @@
-
 <?php
-
   include "entidade/Carrinho.php";
   include "entidade/Item.php";
-   include "entidade/Cliente.php";
+  include "entidade/Cliente.php";
   include "entidade/Endereco.php";
- 
-
-// Inicia sessões
-session_start();
+   session_start();
 
 // Verifica se existe os dados da sessão de login
 if(!isset($_SESSION["carrinho"]) || !isset($_SESSION["cliente"]))
@@ -17,7 +12,6 @@ if(!isset($_SESSION["carrinho"]) || !isset($_SESSION["cliente"]))
 header("Location: https://foodnow-production.up.railway.app/");
 exit;
 }
-
 
 ?>
 

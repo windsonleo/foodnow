@@ -670,7 +670,7 @@ while($dadoscli = pg_fetch_assoc($sqlcliente)){
   $cliente->setnome($nome);
   $cliente->setemail($email);
   $cliente->settelefone($telefone);
-  $cliente->setendereco($enderecoaux);
+ // $cliente->setendereco($enderecoaux);
  // $cliente->setarr_pedidos($pedidos);
   $cliente->setativo($ativo);
   $cliente->setdataregistro($dataregistro);

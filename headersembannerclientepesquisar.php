@@ -179,19 +179,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <h1 class="display-4">Pesquisar seu Endereco</h1>
     <p class="lead">Preencha com seu Cep.</p>
 
- <form action="<?php echo $_SERVER['PHP_SELF'];?>" method="POST" id="pesquisacep">
 
-
- <p> <input name="cepconsulta" type="text" class="form-control col-sm-6" placeholder="Digite o Cep" aria-label="Digite o Cep" aria-describedby="button-addon2" value="<?php echo $cep; ?>">
- 
-
-    <button class="btn btn-outline-secondary col-sm-3" type="submit" id="button-addon2">Pesquisar</button>
-
-  </p>
-
-
-
-    </form>
 
   </div>
 </div>

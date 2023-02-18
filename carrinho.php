@@ -147,7 +147,7 @@ if(isset($_SESSION['carrinho'])) {
 
     $temendereco = $_SESSION['temendereco'];
     // $carrinho->setcliente($cliente);
-     $endereco_id = $_SESSION['endereco_id'];
+   
      $cliente = ($_SESSION['cliente']);
      
      $cliente->setendereco($endereco);
@@ -173,7 +173,7 @@ if(isset($_SESSION['carrinho'])) {
 
 
     $_SESSION['endereco']=$endereco;
-    $_SESSION['endereco_id'] = 0;
+  //  $_SESSION['endereco_id'] = 0;
    // echo 'endereco NAO setado : ' ;
       $temendereco = false;
 
@@ -192,6 +192,23 @@ if(isset($_SESSION['carrinho'])) {
 
 
     $_SESSION['usuario_nome']='usu padrao';
+
+
+}
+	
+	
+	
+	
+	  if(isset($_SESSION['endereco_id'])){
+
+        $endereco_id = $_SESSION['usuario_nome'];
+
+
+  	}else {
+
+			$endereco_id = 0;
+      
+		  $_SESSION['endereco_id']=$endereco_id;
 
 
 }

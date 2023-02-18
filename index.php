@@ -1,48 +1,12 @@
+<?php
+ session_start();
+?>
 
 <?php
-
  include "entidade/Carrinho.php";
  include "entidade/Endereco.php";
  include "entidade/Cliente.php";
-
- session_start();
-/*$carrinho= new Carrinho();
- $_SESSION["carrinho"]=$carrinho;
-
-$cliente = new Cliente();
- $_SESSION["cliente"]=$cliente ;
-
- $endereco = new Endereco();
-$_SESSION["endereco"]=$endereco;
-
-   $totalitenscarrinho = 0 ;
-     $totalvalorcarrinho = 0.00;
-  $_SESSION['totalitem']=$totalitenscarrinho;
-     $_SESSION['totalvalor']=$totalvalorcarrinho;
-
-if(isset($_SESSION['carrinho']))
-{
- $carrinho = $_SESSION["carrinho"];
-   $_SESSION['totalitem']=$totalitenscarrinho;
-     $_SESSION['totalvalor']=$totalvalorcarrinho;
- 
-} 
-
-if (isset($_SESSION['cliente'])){ 
- 
-   $cliente = $_SESSION['cliente'];
- 
-}
- 
- 
- if (isset($_SESSION['endereco'])){
- 
- $endereco = $_SESSION['endereco'];
- 
- }*/
-
 ?>
-
 
 <!DOCTYPE html>
 
@@ -55,6 +19,8 @@ if (isset($_SESSION['cliente'])){
 
 
 <?php
+ 
+ 
 
 $nomeempresa = "Teste";
 $segmentoempresa = "Comida Japonesa";

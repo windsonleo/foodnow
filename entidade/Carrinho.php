@@ -7,7 +7,7 @@ class Carrinho{
 	
 	private $id;
 	private $ativo;
-	public Cliente $cliente;
+	public Cliente $cliente = new Cliente();
 
 	public $totalvalor;
 	private $dataregistro;

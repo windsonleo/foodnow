@@ -29,7 +29,9 @@ $qtd = $_GET["qtd"];
 
 //var_dump("car" .$_SESSION['carrinho']); 
 
-
+$carroaux;
+$clienteaux;
+$enderecoaux;
 
   $sqlcat = pg_query($conn,"select * from produto where id = {$id}") or die("Erro");
 
@@ -50,13 +52,13 @@ while($dadosprod = pg_fetch_assoc($sqlcat)){
 	
 	if(isset($_SESSION['carrinho'])) {
 		
-	$carrinho = $_SESSION['carrinho'];
-      $carrinho->addItens($item);
-      $totalitenscarrinho = $carrinho -> CalcularTotalItens();
-      $totalvalorcarrinho = $carrinho -> CalcularTotal();
-      $carrinho->settotalitens($totalitenscarrinho);
-      $carrinho->settotalvalor($totalvalorcarrinho);
-      $_SESSION['carrinho'] =  $carrinho;	
+	$carroaux = $_SESSION['carrinho'];
+      $carroaux->addItens($item);
+      $totalitenscarrinho = $carroaux -> CalcularTotalItens();
+      $totalvalorcarrinho = $carroaux -> CalcularTotal();
+      $carroaux->settotalitens($totalitenscarrinho);
+      $carroaux->settotalvalor($totalvalorcarrinho);
+      $_SESSION['carrinho'] =  $carroaux;	
 		
 	}
  	
@@ -110,31 +112,31 @@ while($dadosprod = pg_fetch_assoc($sqlcat)){
  /*   $carrinho = $_SESSION["carrinho"];
     $cliente = $_SESSION["cliente"];
     $endereco = $_SESSION["endereco"];*/
-	 $carrinho = $_SESSION["carrinho"];
-	 $cliente = $_SESSION["cliente"];
+	 $carroaux = $_SESSION["carrinho"];
+	 $clienteaux = $_SESSION["cliente"];
 	
-	  if($carrinho->getid()==null){
+	  if($carroaux->getid()==null){
 
-    $idcarrinho = $carrinho->guidv4();
+    $idcarrinho = $carroaux->guidv4();
 
-      $carrinho->setid($idcarrinho);
+      $carroaux->setid($idcarrinho);
 
   }else {
 
-    $carrinho->setcliente($cliente);
+    $carroaux->setcliente($clienteaux);
 
 
   }
 	
-  $_SESSION['carrinho'] = $carrinho;
+  $_SESSION['carrinho'] = $carroaux;
   
   $_SESSION['totalitem'] = $totalitenscarrinho;
 	
   $_SESSION['totalvalor'] = $totalvalorcarrinho;
 
-  $_SESSION['cliente'] = $cliente;
+  $_SESSION['cliente'] = $clienteaux;
 
- $_SESSION['endereco'] = $endereco;	
+ $_SESSION['endereco'] = $enderecoaux;	
 	
      
 	
@@ -216,11 +218,6 @@ while($dadosprod = pg_fetch_assoc($sqlcat)){
 	
     //$carrinho->setcliente($cliente);
   	
-	
-	
-
-	
-
 
 }
 

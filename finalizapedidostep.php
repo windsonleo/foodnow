@@ -640,15 +640,15 @@ if (!$conn) {
 }
 
 
-$telefone = $_POST["telefone"];
+//$telefone = $_POST["telefone"];
 
 $telefone = '81988771025';
 
-//$_SESSION['tel'] = $telefone;
+$_SESSION['tel'] = $telefone;
 
 $end = $_SESSION['endereco'];
 
-//$cep = $_POST["cep"];
+$cep = $_POST["cep"];
 
 
   $sqlcliente = pg_query($conn,"select * from cliente where telefone = '{$telefone}'") or die("Erro");
@@ -660,7 +660,7 @@ while($dadoscli = pg_fetch_assoc($sqlcliente)){
   $email = $dadoscli['email'];
   $telefone = $dadoscli['telefone'];
   $enderecoaux = $dadoscli['endereco_id'];
-  $pedidos = $dadoscli['arr_pedidos'];
+  //$pedidos = $dadoscli['arr_pedidos'];
   $ativo = $dadoscli['ativo'];
   $dataregistro = $dadoscli['dataregistro'];
   $datanascimento = $dadoscli['datanascimento'];
@@ -671,7 +671,7 @@ while($dadoscli = pg_fetch_assoc($sqlcliente)){
   $cliente->setemail($email);
   $cliente->settelefone($telefone);
   $cliente->setendereco($enderecoaux);
-  $cliente->setarr_pedidos($pedidos);
+ // $cliente->setarr_pedidos($pedidos);
   $cliente->setativo($ativo);
   $cliente->setdataregistro($dataregistro);
   $cliente->setdatanascimento($datanascimento);

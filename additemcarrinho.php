@@ -154,6 +154,9 @@ while($dadosprod = pg_fetch_assoc($sqlcat)){
 
  $_SESSION['endereco'] = $enderecoaux;	
 	
+$_SESSION['totalvalor'] = $totalvalorcarrinho;
+ $_SESSION['totalitem'] = $totalitenscarrinho ; 
+	
      
 	
 /*	if(isset($_SESSION['carrinho'])) {
@@ -236,6 +239,15 @@ while($dadosprod = pg_fetch_assoc($sqlcat)){
   	
 
 }
+
+  $_SESSION['carrinho'] = $carroaux;
+  
+  $_SESSION['cliente'] = $clienteaux;
+
+ $_SESSION['endereco'] = $enderecoaux;	
+	
+$_SESSION['totalvalor'] = $totalvalorcarrinho;
+ $_SESSION['totalitem'] = $totalitenscarrinho ; 
 
 
  

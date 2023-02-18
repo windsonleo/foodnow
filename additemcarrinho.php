@@ -48,14 +48,18 @@ while($dadosprod = pg_fetch_assoc($sqlcat)){
 	//echo var_dump("sessao" .$_SESSION);
 	//echo var_dump("item" .$item);
 	
-	//if(isset($_SESSION['carrinho'])) {
- 	$carrinho = $_SESSION['carrinho'];
+	if(isset($_SESSION['carrinho'])) {
+		
+	$carrinho = $_SESSION['carrinho'];
       $carrinho->addItens($item);
       $totalitenscarrinho = $carrinho -> CalcularTotalItens();
       $totalvalorcarrinho = $carrinho -> CalcularTotal();
       $carrinho->settotalitens($totalitenscarrinho);
       $carrinho->settotalvalor($totalvalorcarrinho);
-      $_SESSION['carrinho'] =  $carrinho;
+      $_SESSION['carrinho'] =  $carrinho;	
+		
+	}
+ 	
  
  /* } else {
  
@@ -106,7 +110,8 @@ while($dadosprod = pg_fetch_assoc($sqlcat)){
  /*   $carrinho = $_SESSION["carrinho"];
     $cliente = $_SESSION["cliente"];
     $endereco = $_SESSION["endereco"];*/
-	
+	 $carrinho = $_SESSION["carrinho"];
+	 $cliente = $_SESSION["cliente"];
 	
 	  if($carrinho->getid()==null){
 

@@ -46,7 +46,7 @@ while($dadosprod = pg_fetch_assoc($sqlcat)){
 	//echo var_dump("sessao" .$_SESSION);
 	//echo var_dump("item" .$item);
 	
-	if(isset($_SESSION['carrinho'])) {
+	//if(isset($_SESSION['carrinho'])) {
  	$carrinho = $_SESSION['carrinho'];
       $carrinho->addItens($item);
       $totalitenscarrinho = $carrinho -> CalcularTotalItens();
@@ -55,7 +55,7 @@ while($dadosprod = pg_fetch_assoc($sqlcat)){
       $carrinho->settotalvalor($totalvalorcarrinho);
       $_SESSION['carrinho'] =  $carrinho;
  
-  } else {
+ /* } else {
  
    	$carrinho =  new Carrinho();
 	$carrinho->addItens($item);
@@ -69,16 +69,16 @@ while($dadosprod = pg_fetch_assoc($sqlcat)){
        $_SESSION['totalvalor'] = $totalvalorcarrinho;
        $_SESSION['totalitem'] = $totalitenscarrinho ;
  
-}
+}*/
 	
-  if(isset($_SESSION['cliente'])){
+ /* if(isset($_SESSION['cliente'])){
     $cliente = $_SESSION['cliente'];
   }else {
    $cliente = new Cliente();
   $_SESSION['cliente']=$cliente;
  
-}
-    if(isset($_SESSION['endereco'])){
+}*/
+  /*  if(isset($_SESSION['endereco'])){
     $endereco = $_SESSION['endereco'];
     $temendereco = $_SESSION['temendereco'];
      $endereco_id = $_SESSION['endereco_id'];
@@ -100,7 +100,7 @@ while($dadosprod = pg_fetch_assoc($sqlcat)){
       $_SESSION['temendereco'] = $temendereco;
        $_SESSION['endereco']=$endereco;
  
-}
+}*/
     $carrinho = $_SESSION["carrinho"];
     $cliente = $_SESSION["cliente"];
     $endereco = $_SESSION["endereco"];
@@ -195,15 +195,21 @@ while($dadosprod = pg_fetch_assoc($sqlcat)){
   }*/
 	
 	
-    $carrinho = $_SESSION["carrinho"];
+  /*  $carrinho = $_SESSION["carrinho"];
     $cliente = $_SESSION["cliente"];
-    $endereco = $_SESSION["endereco"];
+    $endereco = $_SESSION["endereco"];*/
 	
     //$carrinho->setcliente($cliente);
   	
 	
 	
-  /* $_SESSION['carrinho'] = $carrinho;
+
+	
+
+
+}
+
+  $_SESSION['carrinho'] = $carrinho;
   
   $_SESSION['totalitem'] = $totalitenscarrinho;
 	
@@ -211,13 +217,7 @@ while($dadosprod = pg_fetch_assoc($sqlcat)){
 
   $_SESSION['cliente'] = $cliente;
 
- $_SESSION['endereco'] = $endereco;*/
-	
-
-
-}
-
-	
+ $_SESSION['endereco'] = $endereco;	
  
 
  //header('Location: https://foodnoww.000webhostapp.com/');

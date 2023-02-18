@@ -176,7 +176,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     <div class="jumbotron jumbotron-fluid">
   <div class="container">
-    <h1 class="display-4">Pesquisar Cliente</h1>
+    <h1 class="display-4">Pesquisar seu Endereco</h1>
     <p class="lead">Preencha com seu Cep.</p>
 
  <form action="<?php echo $_SERVER['PHP_SELF'];?>" method="POST" id="pesquisacep">

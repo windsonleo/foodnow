@@ -29,7 +29,7 @@ $qtd = $_GET["qtd"];
 
 //var_dump("car" .$_SESSION['carrinho']); 
 
-$carroaux = new Carro();
+$carroaux = new Carrinho();
 $clienteaux = new Cliente();
 $enderecoaux = new Endereco();
 

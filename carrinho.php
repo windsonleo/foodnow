@@ -1,4 +1,3 @@
-
 <?php
   include "entidade/Carrinho.php";
   include "entidade/Item.php";
@@ -269,8 +268,9 @@ if(isset($_SESSION['carrinho'])) {
 
 
 <?php 
+ $carrinhoaux = $_SESSION['carrinho'];
 
-$itens = $carrinho->getarr_itens();
+$itens = $carrinhoaux->getarr_itens();
 //echo $itens;
 
 

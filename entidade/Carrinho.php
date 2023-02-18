@@ -1,7 +1,7 @@
 <?php
 
 
-//include 'Cliente.php';
+include 'Cliente.php';
 
 class Carrinho{
 	

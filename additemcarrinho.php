@@ -1,9 +1,10 @@
 <?php
+session_start();
 include "entidade/Carrinho.php";
 include "entidade/Item.php";
 include "entidade/Cliente.php";
 include "entidade/Endereco.php";
-session_start();
+
 
 
 

@@ -90,13 +90,25 @@ if(isset($_SESSION['carrinho'])) {
      $carrinho = $_SESSION['carrinho'];
      $totalitenscarrinho = $_SESSION['totalitem'];
      $totalvalorcarrinho = $_SESSION['totalvalor'];
+ 
 
 
 
   } else {
  
- $carrinho = new Carrinho();
- $_SESSION['carrinho'] = $carrinho;
+   
+      $totalitenscarrinho = 0 ;
+
+      $totalvalorcarrinho = 0.00;
+
+
+       $_SESSION['carrinho'] =  $carrinho;
+
+
+       $_SESSION['totalvalor'] = $totalvalorcarrinho;
+
+       $_SESSION['totalitem'] = $totalitenscarrinho ;
+
  
 }
 
@@ -113,7 +125,7 @@ if(isset($_SESSION['carrinho'])) {
 
   }else {
    
-   $cliente = new Cliente();
+
   $_SESSION['cliente']=$cliente;
  
 }
@@ -126,7 +138,7 @@ if(isset($_SESSION['carrinho'])) {
      $endereco_id = $_SESSION['endereco_id'];
 
   }else {
- $endereco = new Endereco();
+ 
      $_SESSION['endereco']=$endereco;
  
 }

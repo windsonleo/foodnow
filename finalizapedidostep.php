@@ -9,7 +9,7 @@
 if(!isset($_SESSION["carrinho"]) || !isset($_SESSION["cliente"]))
 {
 // Usuário não logado! Redireciona para a página de login
-header("Location: https://foodnow-production.up.railway.app/");
+header("Location: https://foodnow-production.up.railway.app/carrinho.php");
 exit;
 }
 
@@ -173,7 +173,7 @@ if(isset($_SESSION['carrinho'])) {
 
 
     $_SESSION['endereco']=$endereco;
-    $_SESSION['endereco_id'] = 0;
+   // $_SESSION['endereco_id'] = 0;
    // echo 'endereco NAO setado : ' ;
       $temendereco = false;
 
@@ -640,7 +640,7 @@ if (!$conn) {
 }
 
 
-//$telefone = $_POST["telefone"];
+$telefone = $_POST["telefone"];
 
 $telefone = '81-98877-5544';
 
@@ -704,7 +704,7 @@ while($dadoscli = pg_fetch_assoc($sqlcliente)){
 
   $_SESSION['tel'] = $cliente->gettelefone();
 
-  echo var_dump($cliente);
+ // echo var_dump($cliente);
 
  
 }

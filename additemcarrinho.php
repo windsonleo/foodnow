@@ -47,14 +47,77 @@ while($dadosprod = pg_fetch_assoc($sqlcat)){
 	//echo var_dump("sessao" .$_SESSION);
 	//echo var_dump("item" .$item);
 	
-	
-	
-      $carrinho = $_SESSION["carrinho"];
+	if(isset($_SESSION['carrinho'])) {
+ 	$carrinho = $_SESSION["carrinho"];
       $carrinho->addItens($item);
       $totalitenscarrinho = $carrinho -> CalcularTotalItens();
       $totalvalorcarrinho = $carrinho -> CalcularTotal();
       $carrinho->settotalitens($totalitenscarrinho);
       $carrinho->settotalvalor($totalvalorcarrinho);
+      $_SESSION['carrinho'] =  $carrinho;
+ 
+  } else {
+ 
+   	$carrinho =  new Carrinho();
+      $totalitenscarrinho = 0 ;
+      $totalvalorcarrinho = 0.00;
+       $_SESSION['carrinho'] =  $carrinho;
+       $_SESSION['totalvalor'] = $totalvalorcarrinho;
+       $_SESSION['totalitem'] = $totalitenscarrinho ;
+ 
+}
+	
+  if(isset($_SESSION['cliente'])){
+    $cliente = $_SESSION['cliente'];
+  }else {
+   $cliente = new Cliente();
+  $_SESSION['cliente']=$cliente;
+ 
+}
+    if(isset($_SESSION['endereco'])){
+    $endereco = $_SESSION['endereco'];
+    $temendereco = $_SESSION['temendereco'];
+     $endereco_id = $_SESSION['endereco_id'];
+  }else {
+    $endereco = new Endereco();
+    $id=33;
+    $log='rua da fantasia';
+    $cid='Recife';
+    $num='288';
+    $cepaux='54420-450';
+    $endereco->setid($id);
+    $endereco->setlogradouro($log);
+    $endereco->setcidade($cid);
+    $endereco->setnumero($num);
+    $endereco->setcep($cepaux);
+         $_SESSION['endereco_id'] = 0;
+   // echo 'endereco NAO setado : ' ;
+      $temendereco = false;
+      $_SESSION['temendereco'] = $temendereco;
+       $_SESSION['endereco']=$endereco;
+ 
+}
+    $carrinho = $_SESSION["carrinho"];
+    $cliente = $_SESSION["cliente"];
+    $endereco = $_SESSION["endereco"];
+	
+	
+	  if($carrinho->getid()==null){
+
+    $idcarrinho = $carrinho->guidv4();
+
+      $carrinho->setid($idcarrinho);
+
+  }else {
+
+    $carrinho->setcliente($cliente);
+
+
+  }
+	
+	
+	
+     
 	
 /*	if(isset($_SESSION['carrinho'])) {
       $carrinho = $_SESSION['carrinho'];
@@ -134,68 +197,6 @@ while($dadosprod = pg_fetch_assoc($sqlcat)){
 	
     //$carrinho->setcliente($cliente);
   	
-
-
-  if($carrinho->getid()==null){
-
-    $idcarrinho = $carrinho->guidv4();
-
-      $carrinho->setid($idcarrinho);
-
-  }else {
-
-    $carrinho->setcliente($cliente);
-
-
-  }
-	
-	
-		
-	/*$carrinho = $_SESSION['carrinho'];
-	$carrinho->addItens($item);
-	$totalitenscarrinho = $carrinho -> CalcularTotalItens();
-        $totalvalorcarrinho = $carrinho -> CalcularTotal();
-  	$carrinho->settotalitens($totalitenscarrinho);
-  	$carrinho->settotalvalor($totalvalorcarrinho);
-	$_SESSION['carrinho'] =  $carrinho;
-	 $_SESSION['totalvalor'] = $totalvalorcarrinho;
-        $_SESSION['totalitem'] = $totalitenscarrinho ;
-		
-		
-	$cliente = $_SESSION['cliente'];
-	$carrinho = $_SESSION['carrinho'];
-	$carrinho->setcliente($cliente);
-	$_SESSION['cliente']=$cliente;
-	$_SESSION['carrinho'] = $carrinho;
-		
-		
-	 $endereco = $_SESSION['endereco'];
-		
-		
-	  $cliente = $_SESSION['cliente'];
-
-    	   $cliente->setendereco($endereco);
-	$endereco->setcliente($cliente);
-
-
-    $_SESSION['endereco_id'] = 0;
-   // echo 'endereco NAO setado : ' ;
-      $temendereco = false;
-
-      $_SESSION['temendereco'] = $temendereco;
-		
-	$_SESSION['endereco'] = $endereco;
-	$_SESSION['cliente']=$cliente;
-		
-		
-$carrinho = $_SESSION['carrinho'];
-
-  if($carrinho->getid()==null){
-
-    $idcarrinho = $carrinho->guidv4();
-
-      $carrinho->setid($idcarrinho);
-      $_SESSION['carrinho'] = $carrinho;*/
 	
 	
   /* $_SESSION['carrinho'] = $carrinho;

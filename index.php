@@ -212,7 +212,7 @@ $_SESSION['existecliente']=$existecliente;
 
     $temendereco = $_SESSION['temendereco'];
     // $carrinho->setcliente($cliente);
-     $endereco_id = $_SESSION['endereco_id'];
+    // $endereco_id = $_SESSION['endereco_id'];
      $cliente = ($_SESSION['cliente']);
      
      $cliente->setendereco($endereco);
@@ -238,7 +238,7 @@ $_SESSION['existecliente']=$existecliente;
 
 
     $_SESSION['endereco']=$endereco;
-    $_SESSION['endereco_id'] = 0;
+   // $_SESSION['endereco_id'] = 0;
    // echo 'endereco NAO setado : ' ;
       $temendereco = false;
 
@@ -257,6 +257,19 @@ $_SESSION['existecliente']=$existecliente;
 
 
     $_SESSION['usuario_nome']='usu padrao';
+
+
+}
+ 
+  if(isset($_SESSION['endereco_id'])){
+
+        $endereco_id = $_SESSION['endereco_id'];
+
+
+  }else {
+
+
+    $_SESSION['endereco_id']=0;
 
 
 }

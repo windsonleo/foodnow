@@ -93,7 +93,12 @@ if(isset($_SESSION['carrinho'])) {
 
 
 
-  } 
+  } else {
+ 
+ $carrinho = new Carrinho();
+ $_SESSION['carrinho'] = $carrinho;
+ 
+}
 
 
 
@@ -106,7 +111,12 @@ if(isset($_SESSION['carrinho'])) {
 
 
 
-  }
+  }else {
+   
+   $cliente = new Cliente();
+  $_SESSION['cliente']=$cliente;
+ 
+}
 
 
     if(isset($_SESSION['endereco'])){
@@ -115,7 +125,11 @@ if(isset($_SESSION['carrinho'])) {
     $temendereco = $_SESSION['temendereco'];
      $endereco_id = $_SESSION['endereco_id'];
 
-  }
+  }else {
+ $endereco = new Endereco();
+     $_SESSION['endereco']=$endereco;
+ 
+}
 
 ?>
 

@@ -651,7 +651,7 @@ $end = $_SESSION['endereco'];
 //$cep = $_POST["cep"];
 
 
-  $sqlcliente = pg_query($conn,"select * from cliente where telefone = {$telefone}") or die("Erro");
+  $sqlcliente = pg_query($conn,"select * from cliente where telefone = '{$telefone}'") or die("Erro");
 
 while($dadoscli = pg_fetch_assoc($sqlcliente)){
 

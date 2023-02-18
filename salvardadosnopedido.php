@@ -13,16 +13,19 @@ session_start();
 
 
 
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "cardapio";
+$servername = "host=containers-us-west-54.railway.app";
+$username = "user=postgres";
+$password = "password=GRdKW3TVxT3NuZwQa0EZ";
+$dbname="dbname=railway";
+$porta = "port=6973";
 
 // Create connection
-$conn = mysqli_connect($servername, $username, $password, $dbname);
+//$conn = mysqli_connect($servername, $username,$password,$dbname,$porta);
+
+$conn = pg_connect("$servername $porta $dbname $username $password");
 // Check connection
 if (!$conn) {
-  die("Falha na Conexao: " . mysqli_connect_error());
+  die("Falha na Conexao: " . pg_status_error());
 }
 
 
@@ -127,9 +130,9 @@ $_SESSION['carrinho']=$carrinho;
 
 
 
-  $sqlcliente = mysqli_query($conn,"select * from cliente where telefone = " ."'" .$telefone ."'") or die("Erro");
+  $sqlcliente = pg_query($conn,"select * from cliente where telefone = " ."'" .$telefone ."'") or die("Erro");
 
-while($dadoscli = mysqli_fetch_assoc($sqlcliente)){
+while($dadoscli = pg_fetch_assoc($sqlcliente)){
 
   $id = $dadoscli['id'];
   $nome = $dadoscli['nome'];
@@ -191,7 +194,7 @@ while($dadoscli = mysqli_fetch_assoc($sqlcliente)){
 
  //header('Location: https://foodnoww.000webhostapp.com/finalizapedido.php');
 
-    header('Location: http://foodnow.com/confirmardadosnopedido.php');
+    header('Location: https://foodnow-production.up.railway.app/confirmardadosnopedido.php');
     exit();
 
 

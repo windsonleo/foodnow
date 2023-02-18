@@ -48,7 +48,7 @@ while($dadosprod = pg_fetch_assoc($sqlcat)){
 	//echo var_dump("item" .$item);
 	
 	if(isset($_SESSION['carrinho'])) {
- 	$carrinho = $_SESSION["carrinho"];
+ 	$carrinho = $_SESSION['carrinho'];
       $carrinho->addItens($item);
       $totalitenscarrinho = $carrinho -> CalcularTotalItens();
       $totalvalorcarrinho = $carrinho -> CalcularTotal();

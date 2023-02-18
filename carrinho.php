@@ -65,36 +65,6 @@ $oferta3desconto = "20";
 
 
 
-/*if(isset($_SESSION['carrinho'])){
-
-
-
-     $carrinho = $_SESSION['carrinho'];
-     $totalitenscarrinho = $_SESSION['totalitem'];
-     $cliente=$_SESSION['cliente'];
-     $totalvalorcarrinho = $_SESSION['totalvalor'];
-
-  } else {
-
-
-
-     $carrinho =  new Carrinho();
-     $_SESSION['carrinho'] =  $carrinho;
-
-     $totalitenscarrinho = 0 ;
-
-     $_SESSION['totalitem'] = $totalitenscarrinho ;
-     
-     $cliente= "padrao" ; 
-     $_SESSION['cliente'] = $cliente;
-
-     $totalvalorcarrinho = 0.00;
-      $_SESSION['totalvalor'] = $totalvalorcarrinho;
-
-
-
-  }*/
-
 if(isset($_SESSION['carrinho'])) {
 
 
@@ -153,13 +123,11 @@ if(isset($_SESSION['carrinho'])) {
   //  echo 'cliente setado : ' .$cliente->getnome();
 
 
-  }
-	
-else {
+  }else {
 
     $cliente = new Cliente();
     $id=22;
-    $nomecli='padrãol';
+    $nomecli='padrão';
     $cliente->setid($id);
     $cliente->setnome($nomecli);
     $_SESSION['cliente']=$cliente;
@@ -178,12 +146,13 @@ else {
     $temendereco = $_SESSION['temendereco'];
     // $carrinho->setcliente($cliente);
      $endereco_id = $_SESSION['endereco_id'];
+     $cliente = ($_SESSION['cliente']);
+     
      $cliente->setendereco($endereco);
-
+      $_SESSION['cliente']=$cliente;
 
   }else {
 
-	     $cliente = $_SESSION['cliente'];
     $endereco = new Endereco();
     $id=33;
     $log='rua da fantasia';
@@ -199,7 +168,7 @@ else {
 
     $cliente->setendereco($endereco);
 
-$_SESSION['cliente'] =  $cliente;
+
 
     $_SESSION['endereco']=$endereco;
     $_SESSION['endereco_id'] = 0;
@@ -211,6 +180,19 @@ $_SESSION['cliente'] =  $cliente;
 
   }
 
+
+      if(isset($_SESSION['usuario_nome'])){
+
+        $usuario_nome = $_SESSION['usuario_nome'];
+
+
+  }else {
+
+
+    $_SESSION['usuario_nome']='usu padrao';
+
+
+}
 
 ?>
 

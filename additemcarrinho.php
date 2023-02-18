@@ -112,8 +112,8 @@ while($dadosprod = pg_fetch_assoc($sqlcat)){
  /*   $carrinho = $_SESSION["carrinho"];
     $cliente = $_SESSION["cliente"];
     $endereco = $_SESSION["endereco"];*/
-	 $carroaux = $_SESSION["carrinho"];
-	 $clienteaux = $_SESSION["cliente"];
+	// $carroaux = $_SESSION["carrinho"];
+	// $clienteaux = $_SESSION["cliente"];
 	
 	  if($carroaux->getid()==null){
 

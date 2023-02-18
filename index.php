@@ -1,8 +1,4 @@
 <?php
-
-?>
-
-<?php
  include "entidade/Carrinho.php";
  include "entidade/Endereco.php";
  include "entidade/Cliente.php";

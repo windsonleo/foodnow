@@ -44,8 +44,8 @@ while($dadosprod = pg_fetch_assoc($sqlcat)){
   $iditem = $item->guidv4();
   $item->setid($iditem);
 	
-	echo var_dup($_SESSION);
-	echo var_dup($item);
+	echo var_dump($_SESSION);
+	echo var_dump($item);
 	
      $carrinho = $_SESSION['carrinho'];
       $carrinho->addItens($item);

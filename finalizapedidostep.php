@@ -453,19 +453,33 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <!-- <p class="card-text">dados do seu carrinho.</p> -->
   
       <div class="card-body">
+	      
+	       <form action="<?php echo $_SERVER['PHP_SELF'];?>" method="POST" id="pesquisacep">
+
+
+ <p> <input name="cepconsulta" type="text" class="form-control col-sm-6" placeholder="Digite o Cep" aria-label="Digite o Cep" aria-describedby="button-addon2" value="<?php echo $cep; ?>">
+ 
+
+    <button class="btn btn-outline-secondary col-sm-3" type="submit" id="button-addon2">Pesquisar</button>
+
+  </p>
+
+
+
+    </form>
 
 
  <form action="salvardadosnopedido.php" method="POST" id="regForm" >
 
 <div class="tab"> Dados do Endereço
            <p>
-                <input type="text" name="cep"readonly class="form-control-plaintext" id="staticcep" value="<?php echo $cep; ?>" placeholder="Cep..." oninput="this.className = ''" >
+                <input type="text" name="cep"readonly class="form-control-plaintext .d-none" id="staticcep" value="<?php echo $cep; ?>" placeholder="Cep..." oninput="this.className = ''" >
 
                 </p> 
  
 
                 <p>
-              <input type="text" readonly class="form-control-plaintext" id="staticlog" value="<?php echo $logradouro; ?>" placeholder="Rua..." oninput="this.className = ''" name="logradouro">
+              <input type="text" readonly class="form-control-plaintext .d-none" id="staticlog" value="<?php echo $logradouro; ?>" placeholder="Rua..." oninput="this.className = ''" name="logradouro">
 
                 </p>
 
@@ -475,12 +489,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 </p>
 
                                 <p>
-              <input type="text"  class="form-control-plaintext" id="staticbairro" value="<?php echo $bairro; ?>" placeholder="Bairro..." oninput="this.className = ''" name="bairro">
+              <input type="text"  class="form-control-plaintext .d-none" id="staticbairro" value="<?php echo $bairro; ?>" placeholder="Bairro..." oninput="this.className = ''" name="bairro">
 
                 </p>
 
                          <p>
-                 <input type="text" readonly  class="form-control-plaintext" id="staticuf" value="<?php echo $uf; ?>" placeholder="UF..." oninput="this.className = ''" name="uf">
+                 <input type="text" readonly  class="form-control-plaintext .d-none" id="staticuf" value="<?php echo $uf; ?>" placeholder="UF..." oninput="this.className = ''" name="uf">
 
                 </p>
 
@@ -488,7 +502,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
                 <p>
-                 <input type="text"  class="form-control-plaintext" id="staticlocalidade" value="<?php echo $localidade; ?>" placeholder="Cidade..." oninput="this.className = ''" name="localidade">
+                 <input type="text"  class="form-control-plaintext .d-none" id="staticlocalidade" value="<?php echo $localidade; ?>" placeholder="Cidade..." oninput="this.className = ''" name="localidade">
 
                 </p>
 

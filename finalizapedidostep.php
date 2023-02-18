@@ -454,10 +454,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   
       <div class="card-body">
 	      
+	      <div class="row">
+	      
 	       <form action="<?php echo $_SERVER['PHP_SELF'];?>" method="POST" id="pesquisacep">
 
 
- <p> <input name="cepconsulta" type="text" class="form-control col-sm-4" placeholder="Digite o Cep" aria-label="Digite o Cep" aria-describedby="button-addon2" value="<?php echo $cep; ?>">
+ <p> <input name="cepconsulta" type="text" class="form-control col-sm-2" placeholder="Digite o Cep" aria-label="Digite o Cep" aria-describedby="button-addon2" value="<?php echo $cep; ?>">
  
 
     <button class="btn btn-outline-secondary col-sm-3" type="submit" id="button-addon2">Pesquisar</button>
@@ -467,6 +469,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
     </form>
+	      </div>
 
 
  <form action="salvardadosnopedido.php" method="POST" id="regForm" >
@@ -514,10 +517,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     </div>
 	 
-	        <form action="pesquisarcliente.php" method="POST" id="pesquisacliente">
+	        
+
+    <div class="tab"> Dados do Cliente 
+	    
+	    <form action="pesquisarcliente.php" method="POST" id="pesquisacliente">
 
 
- <p> <input name="clienteconsulta" type="text" class="form-control col-sm-4" placeholder="Digite telefone" aria-label="Digite otelefone" aria-describedby="button-addon2" value="<?php echo $cep; ?>">
+ <p> <input name="telefonecliente" type="text" class="form-control col-sm-2" placeholder="Digite telefone" aria-label="Digite o telefone" aria-describedby="button-addon2" value="<?php echo $cliente->gettelefone();?>">
  
 
     <button class="btn btn-outline-secondary col-sm-3" type="submit" id="button-addon2">Pesquisar</button>
@@ -527,8 +534,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
     </form>
-
-    <div class="tab"> Dados do Cliente 
 
        <div class="form-group row">
 <!--           <label for="id" class="col-sm-2 col-form-label">id</label>

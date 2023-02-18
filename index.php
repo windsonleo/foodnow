@@ -7,36 +7,51 @@
 
  session_start();
 
-if(!isset($_SESSION["carrinho"]) && !isset($_SESSION["cliente"]) && !isset($_SESSION["endereco"]))
+if(!isset($_SESSION["carrinho"]))
 {
 
   $carrinho= new Carrinho();
  $_SESSION['carrinho']=$carrinho;
  
+   $totalitenscarrinho = 0 ;
+     $totalvalorcarrinho = 0.00;
+  $_SESSION['totalitem']=$totalitenscarrinho;
+     $_SESSION['totalvalor']=$totalvalorcarrinho;
+ 
+ 
+}else {
+ 
+    $carrinho=$_SESSION['carrinho'];
+     $totalitenscarrinho= $_SESSION['totalitem'];
+     $totalvalorcarrinho=$_SESSION['totalvalor'];
+ 
+}
+
+
+if (!isset($_SESSION["cliente"])){ 
+ 
    $cliente = new Cliente();
   $_SESSION['cliente']=$cliente;
+ 
+}else{
+
+ $cliente = $_SESSION['cliente'];
+ 
+}
+ 
+ 
+ if (!isset($_SESSION["endereco"])){
  
    $endereco = new Endereco();
   $_SESSION['endereco']= $endereco;
  
-  $totalitenscarrinho = 0 ;
-     $totalvalorcarrinho = 0.00;
-     $_SESSION['totalitem']=$totalitenscarrinho;
-     $_SESSION['totalvalor']=$totalvalorcarrinho;
- 
-}else {
- 
- $carrinho = $_SESSION['carrinho'];
-  $cliente = $_SESSION['cliente'];
+ }else {
+  
   $endereco = $_SESSION['endereco'];
+  
+ }
+
  
-      $_SESSION['totalitem']=$totalitenscarrinho;
-     $_SESSION['totalvalor']=$totalvalorcarrinho;
-
-
-}
- 
-
 ?>
 
 

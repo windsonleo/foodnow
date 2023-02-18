@@ -27,7 +27,7 @@ $id = $_GET["idprod"];
 $ativo = 1;
 $qtd = $_GET["qtd"];
 
-var_dump("car" .$_SESSION['carrinho']); 
+//var_dump("car" .$_SESSION['carrinho']); 
 
 
 
@@ -50,7 +50,7 @@ while($dadosprod = pg_fetch_assoc($sqlcat)){
 	
 	//if(isset($_SESSION['carrinho'])) {
  	$carrinho = $_SESSION['carrinho'];
-      $carrinho->addItens($item);
+      $carrinho.addItens($item);
       $totalitenscarrinho = $carrinho -> CalcularTotalItens();
       $totalvalorcarrinho = $carrinho -> CalcularTotal();
       $carrinho->settotalitens($totalitenscarrinho);

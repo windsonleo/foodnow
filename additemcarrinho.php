@@ -103,9 +103,9 @@ while($dadosprod = pg_fetch_assoc($sqlcat)){
        $_SESSION['endereco']=$endereco;
  
 }*/
-    $carrinho = $_SESSION["carrinho"];
+ /*   $carrinho = $_SESSION["carrinho"];
     $cliente = $_SESSION["cliente"];
-    $endereco = $_SESSION["endereco"];
+    $endereco = $_SESSION["endereco"];*/
 	
 	
 	  if($carrinho->getid()==null){
@@ -121,7 +121,15 @@ while($dadosprod = pg_fetch_assoc($sqlcat)){
 
   }
 	
+  $_SESSION['carrinho'] = $carrinho;
+  
+  $_SESSION['totalitem'] = $totalitenscarrinho;
 	
+  $_SESSION['totalvalor'] = $totalvalorcarrinho;
+
+  $_SESSION['cliente'] = $cliente;
+
+ $_SESSION['endereco'] = $endereco;	
 	
      
 	
@@ -211,15 +219,7 @@ while($dadosprod = pg_fetch_assoc($sqlcat)){
 
 }
 
-  $_SESSION['carrinho'] = $carrinho;
-  
-  $_SESSION['totalitem'] = $totalitenscarrinho;
-	
-  $_SESSION['totalvalor'] = $totalvalorcarrinho;
 
-  $_SESSION['cliente'] = $cliente;
-
- $_SESSION['endereco'] = $endereco;	
  
 
  //header('Location: https://foodnoww.000webhostapp.com/');

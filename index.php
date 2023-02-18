@@ -1,12 +1,14 @@
 <?php
- session_start();
-?>
-
-<?php
  include "entidade/Carrinho.php";
  include "entidade/Endereco.php";
  include "entidade/Cliente.php";
 ?>
+
+<?php
+ session_start();
+?>
+
+
 
 <!DOCTYPE html>
 

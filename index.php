@@ -217,7 +217,7 @@ $_SESSION['existecliente']=$existecliente;
      $clienteaux = unserialize($_SESSION['cliente']);
      
      $clienteaux->setendereco($endereco);
-      $_SESSION['cliente']=$clienteaux;
+      $_SESSION['cliente']=serialize($clienteaux);
 
   }else {
 

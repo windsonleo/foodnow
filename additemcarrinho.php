@@ -44,10 +44,10 @@ while($dadosprod = pg_fetch_assoc($sqlcat)){
   $iditem = $item->guidv4();
   $item->setid($iditem);
 	
-	echo var_dump($_SESSION);
-	echo var_dump($item);
+	echo var_dump("sessao" .$_SESSION);
+	echo var_dump("item" .$item);
 	
-     $carrinho = $_SESSION['carrinho'];
+      $carrinho = $_SESSION["carrinho"];
       $carrinho->addItens($item);
       $totalitenscarrinho = $carrinho -> CalcularTotalItens();
       $totalvalorcarrinho = $carrinho -> CalcularTotal();

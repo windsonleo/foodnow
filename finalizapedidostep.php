@@ -14,7 +14,7 @@ session_start();
 if(!isset($_SESSION["carrinho"]) || !isset($_SESSION["cliente"]))
 {
 // Usuário não logado! Redireciona para a página de login
-header("Location: http://foodnow.com/");
+header("Location: https://foodnow-production.up.railway.app/");
 exit;
 }
 

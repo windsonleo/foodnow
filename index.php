@@ -24,6 +24,16 @@ if(!isset($_SESSION["carrinho"]) && !isset($_SESSION["cliente"]) && !isset($_SES
      $_SESSION['totalitem']=$totalitenscarrinho;
      $_SESSION['totalvalor']=$totalvalorcarrinho;
  
+}else {
+ 
+ $carrinho = $_SESSION['carrinho'];
+  $cliente = $_SESSION['cliente'];
+  $endereco = $_SESSION['endereco'];
+ 
+      $_SESSION['totalitem']=$totalitenscarrinho;
+     $_SESSION['totalvalor']=$totalvalorcarrinho;
+
+
 }
  
 

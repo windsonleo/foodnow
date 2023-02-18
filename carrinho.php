@@ -4,6 +4,9 @@
   include "entidade/Cliente.php";
   include "entidade/Endereco.php";
   session_start();
+$carrinho = $_SESSION["carrinho"];
+$cliente = $_SESSION["cliente"] ;
+$endereco = $_SESSION["endereco"];
 ?>
 
 

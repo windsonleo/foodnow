@@ -12,16 +12,19 @@ session_start();
 
 
 
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "cardapio";
+$servername = "host=containers-us-west-54.railway.app";
+$username = "user=postgres";
+$password = "password=GRdKW3TVxT3NuZwQa0EZ";
+$dbname="dbname=railway";
+$porta = "port=6973";
 
 // Create connection
-$conn = mysqli_connect($servername, $username, $password, $dbname);
+//$conn = mysqli_connect($servername, $username,$password,$dbname,$porta);
+
+$conn = pg_connect("$servername $porta $dbname $username $password");
 // Check connection
 if (!$conn) {
-  die("Falha na Conexao: " . mysqli_connect_error());
+  die("Falha na Conexao: " . pg_connect_error());
 }
 
 
@@ -53,16 +56,16 @@ function InserirCliente($clienteativo,$clientenome,$clienteemail,$clientetelefon
   $conn = $conexao;
 
 $sql = "INSERT INTO cliente (id, ativo, nome, email, telefone, datanascimento,endereco_id, dataregistro)
-VALUES (NULL, $clienteativo, '$clientenome', '$clienteemail' , '$clientetelefone','$clientedatanascimento',NULL, CURRENT_TIMESTAMP)";
+VALUES (NULL, $clienteativo, '$clientenome', '$clienteemail' , '$clientetelefone','$clientedatanascimento',NULL, now())";
 
-if (mysqli_query($conn, $sql)) {
+if (pg_query($conn, $sql)) {
   echo "Registro cliente incluido com sucesso";
 
-  printf( "ID %d.\n" , mysqli_insert_id($conn));
+  printf( "ID %d.\n" , pg_insert_id($conn));
 
-  echo "\n", mysqli_insert_id($conn);
+  echo "\n", pg_insert_id($conn);
 
-  $idclienteaux =  mysqli_insert_id($conn);
+  $idclienteaux =  pg_insert_id($conn);
 
   //echo "id cliente aux". $idclienteaux;
 
@@ -71,7 +74,7 @@ if (mysqli_query($conn, $sql)) {
   // exit();
 
 } else {
-  echo "Error add cliente: " . $sql . "<br>" . mysqli_error($conn);
+  echo "Error add cliente: " . $sql . "<br>" . pg_error($conn);
 }
 
 
@@ -81,7 +84,7 @@ if (mysqli_query($conn, $sql)) {
 //incluir endereco
 
 $enderecoativo=1;
-$enderecoclienteid=mysqli_insert_id($conn);
+$enderecoclienteid=pg_insert_id($conn);
 $enderecologradouro = $endereco->getlogradouro();
 $enderecouf = $endereco->getuf();
 $enderecocidade = $endereco->getcidade();
@@ -99,16 +102,16 @@ function InserirEndereco($enderecoativo,$enderecoclienteid,$enderecologradouro,$
   $conn = $conexao;
 
 $sql2 = "INSERT INTO endereco (id, ativo, cliente_id, logradouro, uf, cidade,bairro,cep,numero,complemento, dataregistro)
-VALUES (NULL, $enderecoativo, $enderecoclienteid, '$enderecologradouro' , '$enderecouf','$enderecocidade','$enderecobairro','$enderecocep','$endereconumero','$enderecocomplemento', CURRENT_TIMESTAMP)";
+VALUES (NULL, $enderecoativo, $enderecoclienteid, '$enderecologradouro' , '$enderecouf','$enderecocidade','$enderecobairro','$enderecocep','$endereconumero','$enderecocomplemento', now())";
 
-if (mysqli_query($conn, $sql2)) {
+if (pg_query($conn, $sql2)) {
   echo "Registro endereco incluido com sucesso";
 
-  printf( "ID enderco %d.\n" , mysqli_insert_id($conn));
+  printf( "ID enderco %d.\n" , pg_insert_id($conn));
 
-  echo "\n", mysqli_insert_id($conn);
+  echo "\n", pg_insert_id($conn);
 
-  $idenderecoaux =  mysqli_insert_id($conn);
+  $idenderecoaux =  pg_insert_id($conn);
 
   //echo "id cliente aux". $idclienteaux;
 
@@ -117,7 +120,7 @@ if (mysqli_query($conn, $sql2)) {
   // exit();
 
 } else {
-  echo "Error add endereco: " . $sql2 . "<br>" . mysqli_error($conn);
+  echo "Error add endereco: " . $sql2 . "<br>" . pg_error($conn);
 }
 
 
@@ -169,18 +172,18 @@ function InserirPedido($pedidoativo,$pedidoclienteid,$pedidovalortotal,$pedidova
  //VALUES (NULL, '', '', NULL, NULL, NULL, '', NULL, NULL, NULL, CURRENT_TIMESTAMP)
 
 $sql3 = "INSERT INTO pedido (id, ativo, cliente_id, valortotal, valorpago, status,endereco_id,foientregue,foipago,formapagamento, dataregistro)
-VALUES (NULL, $pedidoativo, $pedidoclienteid, '$pedidovalortotal' , '$pedidovalorpago','$pedidostatus',$pedidoenderecoid,'$foientregue','$foipago','$pedidopagamento', CURRENT_TIMESTAMP)";
+VALUES (NULL, $pedidoativo, $pedidoclienteid, '$pedidovalortotal' , '$pedidovalorpago','$pedidostatus',$pedidoenderecoid,'$foientregue','$foipago','$pedidopagamento', now())";
 
-if (mysqli_query($conn, $sql3)) {
+if (pg_query($conn, $sql3)) {
 
-  $idped =  mysqli_insert_id($conn);
+  $idped =  pg_insert_id($conn);
   echo "Registro pedido incluido com sucesso, id: " .$idped;
-  mysqli_close($conn);
-   header("Location: http://foodnow.com/finalizasessao.php");
+  pg_close($conn);
+   header("Location: https://foodnow-production.up.railway.app/finalizasessao.php");
    exit();
 
 } else {
-  echo "Error: " . $sql3 . "<br>" . mysqli_error($conn);
+  echo "Error: " . $sql3 . "<br>" . pg_error($conn);
 }
 
 

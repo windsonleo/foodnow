@@ -52,12 +52,27 @@ while($dadosprod = pg_fetch_assoc($sqlcat)){
 	
 	if(isset($_SESSION['carrinho'])) {
 		
-	$carroaux = $_SESSION['carrinho'];
+      $carroaux = $_SESSION['carrinho'];
       $carroaux->addItens($item);
       $totalitenscarrinho = $carroaux -> CalcularTotalItens();
       $totalvalorcarrinho = $carroaux -> CalcularTotal();
       $carroaux->settotalitens($totalitenscarrinho);
       $carroaux->settotalvalor($totalvalorcarrinho);
+		
+		
+	 if($carroaux->getid()==null){
+
+    $idcarrinho = $carroaux->guidv4();
+
+      $carroaux->setid($idcarrinho);
+
+  }else {
+
+   // $carroaux->setcliente($clienteaux);
+
+
+  }
+		
       $_SESSION['carrinho'] =  $carroaux;	
 		
 	}
@@ -115,18 +130,7 @@ while($dadosprod = pg_fetch_assoc($sqlcat)){
 	// $carroaux = $_SESSION["carrinho"];
 	// $clienteaux = $_SESSION["cliente"];
 	
-	  if($carroaux->getid()==null){
-
-    $idcarrinho = $carroaux->guidv4();
-
-      $carroaux->setid($idcarrinho);
-
-  }else {
-
-    $carroaux->setcliente($clienteaux);
-
-
-  }
+	
 	
   $_SESSION['carrinho'] = $carroaux;
   

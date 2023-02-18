@@ -44,7 +44,15 @@ while($dadosprod = pg_fetch_assoc($sqlcat)){
   $iditem = $item->guidv4();
   $item->setid($iditem);
 	
-	if(isset($_SESSION['carrinho'])) {
+	
+     $carrinho = $_SESSION['carrinho'];
+      $carrinho->addItens($item);
+      $totalitenscarrinho = $carrinho -> CalcularTotalItens();
+      $totalvalorcarrinho = $carrinho -> CalcularTotal();
+      $carrinho->settotalitens($totalitenscarrinho);
+      $carrinho->settotalvalor($totalvalorcarrinho);
+	
+/*	if(isset($_SESSION['carrinho'])) {
       $carrinho = $_SESSION['carrinho'];
       $carrinho->addItens($item);
       $totalitenscarrinho = $carrinho -> CalcularTotalItens();
@@ -113,14 +121,14 @@ while($dadosprod = pg_fetch_assoc($sqlcat)){
    // echo 'endereco NAO setado : ' ;
       $temendereco = false;
       $_SESSION['temendereco'] = $temendereco;
-  }
+  }*/
 	
 	
     $carrinho = $_SESSION["carrinho"];
     $cliente = $_SESSION["cliente"];
     $endereco = $_SESSION["endereco"];
 	
-	$carrinho->setcliente($cliente);
+    //$carrinho->setcliente($cliente);
   	
 
 
@@ -186,7 +194,7 @@ $carrinho = $_SESSION['carrinho'];
       $_SESSION['carrinho'] = $carrinho;*/
 	
 	
-   $_SESSION['carrinho'] = $carrinho;
+  /* $_SESSION['carrinho'] = $carrinho;
   
   $_SESSION['totalitem'] = $totalitenscarrinho;
 	
@@ -194,7 +202,7 @@ $carrinho = $_SESSION['carrinho'];
 
   $_SESSION['cliente'] = $cliente;
 
- $_SESSION['endereco'] = $endereco;
+ $_SESSION['endereco'] = $endereco;*/
 	
 
 
@@ -205,7 +213,7 @@ $carrinho = $_SESSION['carrinho'];
 
  //header('Location: https://foodnoww.000webhostapp.com/');
 
-    header('Location: https://foodnow-production.up.railway.app/');
+    header('Location: https://foodnow-production.up.railway.app');
     exit();
 
 

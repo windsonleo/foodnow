@@ -78,7 +78,7 @@ while($dadosprod = pg_fetch_assoc($sqlcat)){
 	
   	$_SESSION['totalvalor'] = $totalvalorcarrinho;	
 	
-	
+	var_dump("carroaux" .$carroaux);
 	}
  	
  

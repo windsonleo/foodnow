@@ -50,7 +50,7 @@ while($dadosprod = pg_fetch_assoc($sqlcat)){
 	
 	//if(isset($_SESSION['carrinho'])) {
  	$carrinho = $_SESSION['carrinho'];
-      $carrinho.addItens($item);
+      $carrinho->addItens($item);
       $totalitenscarrinho = $carrinho -> CalcularTotalItens();
       $totalvalorcarrinho = $carrinho -> CalcularTotal();
       $carrinho->settotalitens($totalitenscarrinho);

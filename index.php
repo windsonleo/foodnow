@@ -214,10 +214,10 @@ $_SESSION['existecliente']=$existecliente;
     $temendereco = $_SESSION['temendereco'];
     // $carrinho->setcliente($cliente);
      $endereco_id = $_SESSION['endereco_id'];
-     $clienteaux = unserialize($_SESSION['cliente']);
+     $cliente = ($_SESSION['cliente']);
      
-     $clienteaux->setendereco($endereco);
-      $_SESSION['cliente']=serialize($clienteaux);
+     $cliente->setendereco($endereco);
+      $_SESSION['cliente']=$cliente;
 
   }else {
 

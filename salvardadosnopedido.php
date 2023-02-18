@@ -1,12 +1,8 @@
 <?php
-
-//$teste = $_GET;
-
 include "entidade/Item.php";
 include "entidade/Carrinho.php";
 include "entidade/Cliente.php";
 include "entidade/Endereco.php";
-
 session_start();
 
 
@@ -40,7 +36,7 @@ $end = $_SESSION['endereco'];
 $pagamento = $_POST["customRadio"];
 $troco = $_POST["troco"];
 
-$_SESSION['pagamento'] = $pagamento;
+$_SESSION['customRadio'] = $pagamento;
 $_SESSION['troco'] = $troco;
 
 
@@ -130,7 +126,7 @@ $_SESSION['carrinho']=$carrinho;
 
 
 
-  $sqlcliente = pg_query($conn,"select * from cliente where telefone = " ."'" .$telefone ."'") or die("Erro");
+  $sqlcliente = pg_query($conn,"select * from cliente where telefone = '{$telefone}';") or die("Erro");
 
 while($dadoscli = pg_fetch_assoc($sqlcliente)){
 

@@ -1,12 +1,9 @@
 
 <?php
-// Iniciando uma sessão
-
   include "entidade/Carrinho.php";
   include "entidade/Item.php";
   include "entidade/Cliente.php";
   include "entidade/Endereco.php";
-
 session_start();
  
 // Guardando dados na sessão
@@ -220,9 +217,9 @@ if(isset($_SESSION['carrinho'])) {
 
 
 
-   if(isset($_SESSION['pagamento'])){
+   if(isset($_SESSION['customRadio'])){
 
-    $pagamento = $_SESSION['pagamento'];
+    $pagamento = $_SESSION['customRadio'];
 
   //  echo 'cliente setado : ' .$cliente->getnome();
 
@@ -230,7 +227,7 @@ if(isset($_SESSION['carrinho'])) {
   }else {
 
 
-    $_SESSION['pagamento']='Dindin';
+    $_SESSION['customRadio']='Dindin';
   //  echo 'cliente NAO setado : ' ;
 
 

@@ -58,13 +58,14 @@ while($dadosprod = pg_fetch_assoc($sqlcat)){
       $totalvalorcarrinho = $carroaux -> CalcularTotal();
       $carroaux->settotalitens($totalitenscarrinho);
       $carroaux->settotalvalor($totalvalorcarrinho);
-		
+	$_SESSION['carrinho'] =  $carroaux;	
 		
 	 if($carroaux->getid()==null){
 
     $idcarrinho = $carroaux->guidv4();
 
       $carroaux->setid($idcarrinho);
+	 $_SESSION['carrinho'] =  $carroaux;	
 
   }else {
 
@@ -101,6 +102,12 @@ while($dadosprod = pg_fetch_assoc($sqlcat)){
   if(isset($_SESSION['cliente'])){
     $clienteaux = $_SESSION['cliente'];
     $carroaux = $_SESSION['carrinho'] ;
+	  
+    $id=22;
+    $nomecli='padrão';
+    $clienteaux->setid($id);
+    $clienteaux->setnome($nomecli);
+   
     $carroaux->setcliente($clienteaux);
     $_SESSION['carrinho'] =  $carroaux;	
     $_SESSION['cliente']=$clienteaux;

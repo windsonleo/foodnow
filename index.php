@@ -6,7 +6,7 @@
  include "entidade/Cliente.php";
 
  session_start();
-$carrinho= new Carrinho();
+/*$carrinho= new Carrinho();
  $_SESSION["carrinho"]=$carrinho;
 
 $cliente = new Cliente();
@@ -39,7 +39,8 @@ if (isset($_SESSION['cliente'])){
  
  $endereco = $_SESSION['endereco'];
  
- }
+ }*/
+
 ?>
 
 
@@ -103,7 +104,7 @@ $_SESSION['existecliente']=$existecliente;
 
 
 
-/*if(isset($_SESSION['carrinho'])) {
+if(isset($_SESSION['carrinho'])) {
 
 
 
@@ -161,7 +162,7 @@ $_SESSION['existecliente']=$existecliente;
  
      $_SESSION['endereco']=$endereco;
  
-}*/
+}
 
 ?>
 

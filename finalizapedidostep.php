@@ -642,7 +642,7 @@ if (!$conn) {
 
 $telefone = $_POST["telefone"];
 
-$telefone = '81-98877-1025';
+$telefone = '81988771025';
 
 //$_SESSION['tel'] = $telefone;
 

@@ -73,8 +73,12 @@ while($dadosprod = pg_fetch_assoc($sqlcat)){
 
   }
 		
-      $_SESSION['carrinho'] =  $carroaux;	
-		
+      	$_SESSION['carrinho'] =  $carroaux;	
+	  $_SESSION['totalitem'] = $totalitenscarrinho;
+	
+  	$_SESSION['totalvalor'] = $totalvalorcarrinho;	
+	
+	
 	}
  	
  
@@ -134,9 +138,7 @@ while($dadosprod = pg_fetch_assoc($sqlcat)){
 	
   $_SESSION['carrinho'] = $carroaux;
   
-  $_SESSION['totalitem'] = $totalitenscarrinho;
-	
-  $_SESSION['totalvalor'] = $totalvalorcarrinho;
+
 
   $_SESSION['cliente'] = $clienteaux;
 

@@ -7,7 +7,7 @@
 
  session_start();
 
-if(!isset($_SESSION["carrinho"]))
+if(!isset($_SESSION['carrinho']))
 {
 
   $carrinho= new Carrinho();
@@ -28,7 +28,7 @@ if(!isset($_SESSION["carrinho"]))
 }
 
 
-if (!isset($_SESSION["cliente"])){ 
+if (!isset($_SESSION['cliente'])){ 
  
    $cliente = new Cliente();
   $_SESSION['cliente']=$cliente;
@@ -40,7 +40,7 @@ if (!isset($_SESSION["cliente"])){
 }
  
  
- if (!isset($_SESSION["endereco"])){
+ if (!isset($_SESSION['endereco'])){
  
    $endereco = new Endereco();
   $_SESSION['endereco']= $endereco;

@@ -459,12 +459,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	       <form action="<?php echo $_SERVER['PHP_SELF'];?>" method="POST" id="pesquisacep">
 
 
- <p> <input name="cepconsulta" type="text" class="form-control col-sm-2" placeholder="Digite o Cep" aria-label="Digite o Cep" aria-describedby="button-addon2" value="<?php echo $cep; ?>">
+  <input name="cepconsulta" type="text" class="form-control col-sm-4" placeholder="Digite o Cep" aria-label="Digite o Cep" aria-describedby="button-addon2" value="<?php echo $cep; ?>">
  
 
-    <button class="btn btn-outline-secondary col-sm-3" type="submit" id="button-addon2">Pesquisar</button>
+    <button class="btn btn-outline-secondary col-sm-4" type="submit" id="button-addon2">Pesquisar</button>
 
-  </p>
+  
 
 
 
@@ -475,44 +475,38 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
  <form action="salvardadosnopedido.php" method="POST" id="regForm" >
 
 <div class="tab"> Dados do Endereço
-           <p>
-                <input type="text" name="cep"readonly class="form-control-plaintext d-none" id="staticcep" value="<?php echo $cep; ?>" placeholder="Cep..." oninput="this.className = ''" >
+           
+                <input type="text" name="cep"readonly class="form-control-plaintext invisible" id="staticcep" value="<?php echo $cep; ?>" placeholder="Cep..." oninput="this.className = ''" >
 
-                </p> 
+               
  
 
-                <p>
-              <input type="text" readonly class="form-control-plaintext d-none" id="staticlog" value="<?php echo $logradouro; ?>" placeholder="Rua..." oninput="this.className = ''" name="logradouro">
+               
+              <input type="text" readonly class="form-control-plaintext invisible" id="staticlog" value="<?php echo $logradouro; ?>" placeholder="Rua..." oninput="this.className = ''" name="logradouro">
 
-                </p>
+               
 
-                               <p>
+                             
                 <input type="text"  placeholder="Digite o Numero" class="form-control-plaintext" id="staticnumero" value="" required  oninput="this.className = ''" name="numero">
 
-                </p>
+              
+              <input type="text"  class="form-control-plaintext invisible" id="staticbairro" value="<?php echo $bairro; ?>" placeholder="Bairro..." oninput="this.className = ''" name="bairro">
 
-                                <p>
-              <input type="text"  class="form-control-plaintext d-none" id="staticbairro" value="<?php echo $bairro; ?>" placeholder="Bairro..." oninput="this.className = ''" name="bairro">
+                
+                 <input type="text" readonly  class="form-control-plaintext invisible" id="staticuf" value="<?php echo $uf; ?>" placeholder="UF..." oninput="this.className = ''" name="uf">
 
-                </p>
-
-                         <p>
-                 <input type="text" readonly  class="form-control-plaintext d-none" id="staticuf" value="<?php echo $uf; ?>" placeholder="UF..." oninput="this.className = ''" name="uf">
-
-                </p>
+             
 
 
 
 
-                <p>
-                 <input type="text"  class="form-control-plaintext d-none" id="staticlocalidade" value="<?php echo $localidade; ?>" placeholder="Cidade..." oninput="this.className = ''" name="localidade">
+              
+                 <input type="text"  class="form-control-plaintext invisible" id="staticlocalidade" value="<?php echo $localidade; ?>" placeholder="Cidade..." oninput="this.className = ''" name="localidade">
 
-                </p>
-
-                <p>
+                
 
                <input type="text"  placeholder="Digite o Complemento" class="form-control-plaintext" id="staticcomplemento" value="" name="complemento">
-                </p>
+               
 
 
     </div>
@@ -524,32 +518,32 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	    <form action="pesquisarcliente.php" method="POST" id="pesquisacliente">
 
 
- <p> <input name="telefonecliente" type="text" class="form-control col-sm-2" placeholder="Digite telefone" aria-label="Digite o telefone" aria-describedby="button-addon2" value="<?php echo $cliente->gettelefone();?>">
+  <input name="telefonecliente" type="text" class="form-control col-sm-4" placeholder="Digite telefone" aria-label="Digite o telefone" aria-describedby="button-addon2" value="<?php echo $cliente->gettelefone();?>">
  
 
-    <button class="btn btn-outline-secondary col-sm-3" type="submit" id="button-addon2">Pesquisar</button>
+    <button class="btn btn-outline-secondary col-sm-4" type="submit" id="button-addon2">Pesquisar</button>
 
-  </p>
+  
 
 
 
     </form>
 
        <div class="form-group row">
-<!--           <label for="id" class="col-sm-2 col-form-label">id</label>
-          <div class="col-sm-2">
+          <label for="id" class="col-sm-2 col-form-label">id</label>
+          <div class="col-sm-4">
             <input type="text" readonly class="form-control-plaintext" id="id" value="<?php echo $cliente->getid(); ?>" name="id">
-          </div> -->
+          </div> 
         
 
-        <label for="nome" class="col-sm-2 col-form-label">Nome</label>
-          <div class="col-sm-2">
+        <label for="nome" class="col-sm-3 col-form-label">Nome</label>
+          <div class="col-sm-4">
             <input type="text"  placeholder="Digite o Nome" class="form-control-plaintext" id="nome" value="<?php echo $cliente->getnome(); ?>" required oninput="this.className = ''" name="nome">
           </div>
 
 
-                  <label for="email" class="col-sm-2 col-form-label">email</label>
-          <div class="col-sm-2">
+                  <label for="email" class="col-sm-3 col-form-label">email</label>
+          <div class="col-sm-4">
             <input type="text"   class="form-control-plaintext" id="email" value="<?php echo $cliente->getemail(); ?>" placeholder="email..." oninput="this.className = ''" name="email">
           </div>
 
@@ -557,8 +551,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </div>
 
        <div class="form-group row">
-          <label for="telefone" class="col-sm-4 col-form-label">telefone</label>
-          <div class="col-sm-8">
+          <label for="telefone" class="col-sm-3 col-form-label">telefone</label>
+          <div class="col-sm-4">
             <input type="text"  class="form-control-plaintext" id="telefone" value="<?php echo $cliente->gettelefone(); ?>" placeholder="telefone..." oninput="this.className = ''" name="telefone">
           </div>
 
@@ -566,11 +560,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
       <div class="form-group row">
-          <label for="datanascimento" class="col-sm-2 col-form-label">datanascimento</label>
-          <div class="col-sm-2">
+          <label for="datanascimento" class="col-sm-4 col-form-label">datanascimento</label>
+          <div class="col-sm-4">
             <input type="text"  class="form-control-plaintext" id="datanascimento" value="<?php echo $cliente->getdatanascimento(); ?>" placeholder="datanascimento..." oninput="this.className = ''" name="datanascimento">
           </div>
-        <label for="endereco" class="col-sm-2 col-form-label">endereco</label>
+        <label for="endereco" class="col-sm-4 col-form-label">endereco</label>
           <div class="col-sm-6">
             <input type="text"  class="form-control-plaintext" id="endereco" value="<?php echo $cliente->get_endereco(); ?>" placeholder="endereco..." oninput="this.className = ''" name="endereco">
           </div>

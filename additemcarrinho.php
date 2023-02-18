@@ -78,7 +78,7 @@ while($dadosprod = pg_fetch_assoc($sqlcat)){
 	
   	$_SESSION['totalvalor'] = $totalvalorcarrinho;	
 	
-	var_dump("carroaux" .$carroaux);
+	//var_dump("carroaux" .$carroaux);
 	}
  	
  
@@ -98,13 +98,18 @@ while($dadosprod = pg_fetch_assoc($sqlcat)){
  
 }*/
 	
- /* if(isset($_SESSION['cliente'])){
-    $cliente = $_SESSION['cliente'];
+  if(isset($_SESSION['cliente'])){
+    $clienteaux = $_SESSION['cliente'];
+    $carroaux = $_SESSION['carrinho'] ;
+    $carroaux->setcliente($clienteaux);
+    $_SESSION['carrinho'] =  $carroaux;	
+    $_SESSION['cliente']=$clienteaux;
+  
   }else {
-   $cliente = new Cliente();
-  $_SESSION['cliente']=$cliente;
+ /*  $cliente = new Cliente();
+  $_SESSION['cliente']=$cliente;*/
  
-}*/
+}
   /*  if(isset($_SESSION['endereco'])){
     $endereco = $_SESSION['endereco'];
     $temendereco = $_SESSION['temendereco'];
@@ -138,8 +143,6 @@ while($dadosprod = pg_fetch_assoc($sqlcat)){
 	
   $_SESSION['carrinho'] = $carroaux;
   
-
-
   $_SESSION['cliente'] = $clienteaux;
 
  $_SESSION['endereco'] = $enderecoaux;	

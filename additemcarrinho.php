@@ -27,6 +27,8 @@ $id = $_GET["idprod"];
 $ativo = 1;
 $qtd = $_GET["qtd"];
 
+var_dump("car" .$_SESSION['carrinho']); 
+
 
 
   $sqlcat = pg_query($conn,"select * from produto where id = {$id}") or die("Erro");

@@ -1,44 +1,32 @@
 
 <?php
- session_start();
+
  include "entidade/Carrinho.php";
  include "entidade/Endereco.php";
  include "entidade/Cliente.php";
- 
 
-if(isset($_SESSION['carrniho'])){
-    $carrinho = $_SESSION['carrinho'];
-       $_SESSION['carrinho']=$carrinho;
-     $totalitenscarrinho = $_SESSION['totalitem'];
-     $totalvalorcarrinho = $_SESSION['totalvalor'];
-}else{
-     $carrinho= new Carrinho();
-     $totalitenscarrinho = 0 ;
+ session_start();
+
+if(!isset($_SESSION["carrinho"]) && !isset($_SESSION["cliente"]) && !isset($_SESSION["endereco"]))
+{
+
+  $carrinho= new Carrinho();
+ $_SESSION['carrinho']=$carrinho;
+ 
+   $cliente = new Cliente();
+  $_SESSION['cliente']=$cliente;
+ 
+   $endereco = new Endereco();
+  $_SESSION['endereco']= $endereco;
+ 
+  $totalitenscarrinho = 0 ;
      $totalvalorcarrinho = 0.00;
      $_SESSION['totalitem']=$totalitenscarrinho;
      $_SESSION['totalvalor']=$totalvalorcarrinho;
-     $_SESSION['carrinho']=$carrinho;
  
 }
-
-if(isset($_SESSION['cliente'])){
- $cliente = $_SESSION['cliente'];
-  
-}else {
-  $cliente = new Cliente();
-  $_SESSION['cliente']=$cliente;
-}
-
-if(isset($_SESSION['endereco'])){
- $endereco = $_SESSION['endereco'];
-  $temendereco = $_SESSION['temendereco'];
-  $endereco_id = $_SESSION['endereco_id'];
- $_SESSION['endereco']= $endereco;
-}else {
-  $endereco = new Endereco();
-  $_SESSION['endereco']= $endereco;
  
-}
+
 ?>
 
 

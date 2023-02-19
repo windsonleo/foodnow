@@ -61,9 +61,6 @@ if($row == 1) {
 
 }
 
-    
- }
-
  pg_close($conn);
 
 ?>

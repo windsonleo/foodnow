@@ -454,17 +454,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   
       <div class="card-body">
 	      
-	   
-	      
-	
-	    
-
-
- <form action="salvardadosnopedido.php" method="POST" id="regForm" class="needs-validation" novalidate >
-
-<div class="tab"> 
-	
-	
 	       <form action="<?php echo $_SERVER['PHP_SELF'];?>" method="POST" id="pesquisacep">
 		       
 		<div class="input-group mb-3">
@@ -476,11 +465,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 		     
 
 
-    		</form>
+    		</form>   
+	      
 	
-	
-	
-	
+	    
+
+
+ <form action="salvardadosnopedido.php" method="POST" id="regForm" class="needs-validation" novalidate >
+
+<div class="tab"> 
 	
              <div class="form-row">
     		<div class="col-md-4 mb-3">
@@ -531,7 +524,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
              
 
 <div class="col-md-3 mb-3">
-		      <label for="staticlocalidade">lOCALIDADE</label>
+		      <label for="staticlocalidade">LOCALIDADE</label>
                  <input type="text"  class="form-control" id="staticlocalidade" value="<?php echo $localidade; ?>" placeholder="Cidade..." oninput="this.className = ''" name="localidade">
 <div class="invalid-feedback">
         Please provide a valid LOCALIDADE.
@@ -555,7 +548,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     <div class="tab">
 	    
-	    <form action="pesquisarcliente.php" method="POST" id="pesquisacliente">
+	  <!--   <form action="pesquisarcliente.php" method="POST" id="pesquisacliente">
 		    
 		    
 		 <div class="input-group mb-3">
@@ -566,7 +559,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 		</div>
 
 
-    </form>
+    </form> -->
 
        <div class="form-group row">
           <label for="id" class="col-sm-2 col-form-label">id</label>

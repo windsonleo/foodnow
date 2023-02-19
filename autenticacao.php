@@ -46,7 +46,8 @@ while($dadoscli = pg_fetch_assoc($sqlcliente)){
  
   $nome = $dadoscli['nome'];
   $foto = $dadoscli['foto'];
-
+    $usuario->setnome($nome);
+    $usuario->setfoto($foto);
     $row = pg_num_rows($sqlcliente);
 
 if($row == 1) {

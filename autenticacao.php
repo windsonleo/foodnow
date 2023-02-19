@@ -72,7 +72,7 @@ if($row == 1) {
 
 }
 
-
+ }
 
 /* function ListarUsuarios($conexao){
   $conn = $conexao;

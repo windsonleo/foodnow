@@ -7,9 +7,9 @@
 session_start();
  
 // Guardando dados na sessão
-$carrinho = $_SESSION["carrinho"];
+/*$carrinho = $_SESSION["carrinho"];
 $cliente = $_SESSION["cliente"] ;
-$endereco = $_SESSION["endereco"];
+$endereco = $_SESSION["endereco"];*/
 
 
 ?>

@@ -456,6 +456,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	      
 	   
 	      
+	
+	    
+
+
+ <form action="salvardadosnopedido.php" method="POST" id="regForm" class="needs-validation" novalidate >
+
+<div class="tab"> 
+	
+	
 	       <form action="<?php echo $_SERVER['PHP_SELF'];?>" method="POST" id="pesquisacep">
 		       
 		<div class="input-group mb-3">
@@ -468,12 +477,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
     		</form>
-	    
-
-
- <form action="salvardadosnopedido.php" method="POST" id="regForm" class="needs-validation" novalidate >
-
-<div class="tab"> 
+	
+	
+	
+	
 	
              <div class="form-row">
     		<div class="col-md-4 mb-3">
@@ -546,18 +553,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	 
 	        
 
-    <div class="tab"> Dados do Cliente 
+    <div class="tab">
 	    
 	    <form action="pesquisarcliente.php" method="POST" id="pesquisacliente">
-
-
-  <input name="telefonecliente" type="text" class="form-control col-sm-4" placeholder="Digite telefone" aria-label="Digite o telefone" aria-describedby="button-addon2" value="<?php echo $cliente->gettelefone();?>">
- 
-
-    <button class="btn btn-outline-secondary col-sm-4" type="submit" id="button-addon2">Pesquisar</button>
-
-  
-
+		    
+		    
+		 <div class="input-group mb-3">
+		  <input type="text" name="telefonecliente" class="form-control" placeholder="Digite telefone" aria-label="Digite o telefone" aria-describedby="button-addon2" value="<?php echo $cliente->gettelefone();?>">
+		  <div class="input-group-append">
+		    <button class="btn btn-outline-secondary" type="submit">enviar</button>
+		  </div>
+		</div>
 
 
     </form>

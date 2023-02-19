@@ -43,7 +43,7 @@ $sql = "SELECT * FROM usuario WHERE usuario.nome= '$nome' AND usuario.senha='$se
      
 $result = pg_query($conn, $sql);
 $row = pg_num_rows($result);
-$usuario = $result->fetch_assoc();
+$usuario = pg_fetch_assoc($result);
  
 
 if($row == 1) {

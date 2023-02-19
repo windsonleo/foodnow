@@ -49,7 +49,7 @@ $sql = "SELECT * FROM usuario WHERE usuario.nome= '$nome' AND usuario.senha='$se
   echo "Error: " . $sql . "<br>" . mysqli_error($conn);
 }*/
      
-     $sqlcliente = pg_query($conn,"SELECT * FROM usuario WHERE usuario.nome= '$nome' AND usuario.senha='$senha' ";) or die("Erro");
+     $sqlcliente = pg_query($conn,"SELECT * FROM usuario WHERE usuario.nome= '$nome' AND usuario.senha='$senha' ") or die("Erro");
 while($dadoscli = pg_fetch_assoc($sqlcliente)){
  
   $nome = $dadoscli['nome'];

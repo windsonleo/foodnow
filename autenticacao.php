@@ -5,30 +5,29 @@ session_start();
 
 
 if(empty($_POST['nome']) || empty($_POST['senha'])) {
-    header("Location: http://cardapio.com/");
+    header("https://foodnow-production.up.railway.app/");
     exit();
 }
 
 
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "cardapio";
+$servername = "host=containers-us-west-54.railway.app";
+$username = "user=postgres";
+$password = "password=GRdKW3TVxT3NuZwQa0EZ";
+$dbname="dbname=railway";
+$porta = "port=6973";
 
-// Create connection
-$conn = mysqli_connect($servername, $username, $password, $dbname);
+$conn = pg_connect("$servername $porta $dbname $username $password");
+
 // Check connection
 if (!$conn) {
-  die("Falha na Conexao: " . mysqli_connect_error());
+  die("Falha na Conexao: " . pg_connection_status($conn));
 }
 
 
-$id = $_POST["id"];
-$ativo = $_POST["ativo"];
-$ativo = 1;
+
+
+
 $nome = $_POST["nome"];
-$foto = $_POST["foto"];
-$email = $_POST["email"];
 $senha = $_POST["senha"];
 
 
@@ -50,18 +49,18 @@ $sql = "SELECT * FROM usuario WHERE usuario.nome= '$nome' AND usuario.senha='$se
   echo "Error: " . $sql . "<br>" . mysqli_error($conn);
 }*/
 
-$result = mysqli_query($conn, $sql);
-$row = mysqli_num_rows($result);
+$result = pg_query($conn, $sql);
+$row = pg_num_rows($result);
 $usuario = $result->fetch_assoc();
 
 if($row == 1) {
     $_SESSION['usuario_nome'] = $usuario['nome'];
     $_SESSION['usuario_foto'] = $usuario['foto'];
-    header('Location: http://foodnow.com/adm/adm.php');
+    header('Location: https://foodnow-production.up.railway.app/adm/adm.php');
     exit();
 } else {
     $_SESSION['nao_autenticado'] = true;
-    header('Location: index.php');
+    header('Location: https://foodnow-production.up.railway.app/');
     exit();
 }
 
@@ -100,5 +99,5 @@ if (mysqli_query($conn, $sql2)) {
   echo "Error: " . $sql . "<br>" . mysqli_error($conn);
 }*/
 
-mysqli_close($conn);
+pg_close($conn);
 ?>

@@ -505,7 +505,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
                              
 
-              <div class="form-row">
+    <div class="form-row">
     <div class="col-md-6 mb-3">
       <label for="staticbairro">Bairro</label>
               <input type="text"  class="form-control" id="staticbairro" value="<?php echo $bairro; ?>" placeholder="Bairro..." oninput="this.className = ''" name="bairro">
@@ -541,6 +541,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
     </div>
+	
+	 </div>
 	 
 	        
 

@@ -458,13 +458,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	      
 	       <form action="<?php echo $_SERVER['PHP_SELF'];?>" method="POST" id="pesquisacep">
 
-   <div class="row">  
-	   <div class="col">  
+   <div class="row text-center">  
+	   <div class="col sm-4">  
 	   
 	  	 <input name="cepconsulta" type="text" class="form-control" placeholder="Digite o Cep" aria-label="Digite o Cep" aria-describedby="button-addon2" value="<?php echo $cep; ?>">
 	   </div>
 	   
-	   <div class="col">
+	   <div class="col sm-6">
 
     		<button class="btn btn-outline-secondary" type="submit" id="button-addon2">Pesquisar</button>
 	   </div>
@@ -476,41 +476,73 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	    
 
 
- <form action="salvardadosnopedido.php" method="POST" id="regForm" >
+ <form action="salvardadosnopedido.php" method="POST" id="regForm" class="needs-validation" novalidate >
 
 <div class="tab"> 
-           
-                <input type="text" name="cep"readonly class="form-control-plaintext invisible" id="staticcep" value="<?php echo $cep; ?>" placeholder="Cep..." oninput="this.className = ''" >
-
+	
+             <div class="form-row">
+    		<div class="col-md-4 mb-3">
+      			<label for="staticcep">Cep</label>
+                		<input type="text" name="cep" class="form-control" id="staticcep" value="<?php echo $cep; ?>" placeholder="Cep..." oninput="this.className = ''" >
+			<div class="valid-feedback">
+        		Looks good!
+      			</div>
+		</div>
+               <div class="col-md-4 mb-3">
+     			 <label for="staticlog">Logradouro</label>
                
- 
+             		 <input type="text" readonly class="form-control" id="staticlog" value="<?php echo $logradouro; ?>" placeholder="Rua..." oninput="this.className = ''" name="logradouro">
 
-               
-              <input type="text" readonly class="form-control-plaintext invisible" id="staticlog" value="<?php echo $logradouro; ?>" placeholder="Rua..." oninput="this.className = ''" name="logradouro">
-
-               
+               			<div class="valid-feedback">
+        			Looks good!
+      				</div>
+    		</div>
+		     
+		      <div class="col-md-4 mb-3">
+     			 <label for="staticnumero">Numero</label>
+			   <input type="text"  placeholder="Digite o Numero" class="form-control" id="staticnumero" value="" required  oninput="this.className = ''" name="numero">
+				<div class="valid-feedback">
+        			Looks good!
+      				</div>
+    			</div>
+		     
+		</div>
 
                              
-                <input type="text"  placeholder="Digite o Numero" class="form-control-plaintext" id="staticnumero" value="" required  oninput="this.className = ''" name="numero">
 
-              
-              <input type="text"  class="form-control-plaintext invisible" id="staticbairro" value="<?php echo $bairro; ?>" placeholder="Bairro..." oninput="this.className = ''" name="bairro">
-
+              <div class="form-row">
+    <div class="col-md-6 mb-3">
+      <label for="staticbairro">Bairro</label>
+              <input type="text"  class="form-control" id="staticbairro" value="<?php echo $bairro; ?>" placeholder="Bairro..." oninput="this.className = ''" name="bairro">
+	<div class="invalid-feedback">
+        Please provide a valid bairrro.
+      </div>
+    </div>
                 
-                 <input type="text" readonly  class="form-control-plaintext invisible" id="staticuf" value="<?php echo $uf; ?>" placeholder="UF..." oninput="this.className = ''" name="uf">
-
+		      <div class="col-md-3 mb-3">
+      <label for="staticuf">UF</label>
+                 <input type="text" readonly  class="form-control" id="staticuf" value="<?php echo $uf; ?>" placeholder="UF..." oninput="this.className = ''" name="uf">
+<div class="invalid-feedback">
+        Please provide a valid UF.
+      </div>
+    </div>
              
 
-
-
-
-              
-                 <input type="text"  class="form-control-plaintext invisible" id="staticlocalidade" value="<?php echo $localidade; ?>" placeholder="Cidade..." oninput="this.className = ''" name="localidade">
-
+div class="col-md-3 mb-3">
+      <label for="staticlocalidade">lOCALIDADE</label
+                 <input type="text"  class="form-control" id="staticlocalidade" value="<?php echo $localidade; ?>" placeholder="Cidade..." oninput="this.className = ''" name="localidade">
+<div class="invalid-feedback">
+        Please provide a valid LOCALIDADE.
+      </div>
+    </div>
                 
-
-               <input type="text"  placeholder="Digite o Complemento" class="form-control-plaintext" id="staticcomplemento" value="" name="complemento">
-               
+ <div class="col-md-12 mb-6">
+      <label for="staticcomplemento">Complemento</label>
+               <input type="text"  placeholder="Digite o Complemento" class="form-control" id="staticcomplemento" value="" name="complemento">
+            <div class="invalid-feedback">
+        Please provide a valid LOCALIDADE.
+      </div>
+    </div>   
 
 
     </div>

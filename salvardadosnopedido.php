@@ -31,12 +31,10 @@ $_SESSION['tel'] = $telefone;
 
 $end = $_SESSION['endereco'];
 
-
-
 $pagamento = $_POST["customRadio"];
 $troco = $_POST["troco"];
 
-$_SESSION['customRadio'] = $pagamento;
+$_SESSION['pagamento'] = $pagamento;
 $_SESSION['troco'] = $troco;
 
 

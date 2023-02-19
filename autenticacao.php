@@ -48,10 +48,14 @@ $sql = "SELECT * FROM usuario WHERE usuario.nome= '$nome' AND usuario.senha='$se
 } else {
   echo "Error: " . $sql . "<br>" . mysqli_error($conn);
 }*/
+     
+     $sqlcliente = pg_query($conn,"SELECT * FROM usuario WHERE usuario.nome= '$nome' AND usuario.senha='$senha' ";) or die("Erro");
+while($dadoscli = pg_fetch_assoc($sqlcliente)){
+ 
+  $nome = $dadoscli['nome'];
+  $foto = $dadoscli['foto'];
 
-$result = pg_query($conn, $sql);
-$row = pg_num_rows($result);
-$usuario = $result->fetch_assoc();
+    $row = pg_num_rows($sqlcliente);
 
 if($row == 1) {
     $_SESSION['usuario_nome'] = $usuario['nome'];

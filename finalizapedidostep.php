@@ -701,7 +701,7 @@ if (!$conn) {
 
 //$telefone = $_POST["telefone"];
 
-$telefone = '81988771025';
+/*$telefone = '81988771025';
 
 $_SESSION['tel'] = $telefone;
 
@@ -768,7 +768,7 @@ while($dadoscli = pg_fetch_assoc($sqlcliente)){
  
 }
 
- // echo var_dump($cliente);
+ // echo var_dump($cliente);*/
 
 ?>
 

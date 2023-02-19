@@ -183,7 +183,7 @@ while($dadoscli = pg_fetch_assoc($sqlcliente)){
   $_SESSION['existecliente']=true;
 
  
-}
+//}
 
 
  //header('Location: https://foodnoww.000webhostapp.com/finalizapedido.php');

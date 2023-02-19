@@ -461,15 +461,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
    <div class="row">  
 	   <div class="col">  
 	   
-	   <input name="cepconsulta" type="text" class="form-control" placeholder="Digite o Cep" aria-label="Digite o Cep" aria-describedby="button-addon2" value="<?php echo $cep; ?>">
+	  	 <input name="cepconsulta" type="text" class="form-control" placeholder="Digite o Cep" aria-label="Digite o Cep" aria-describedby="button-addon2" value="<?php echo $cep; ?>">
 	   </div>
 	   
 	   <div class="col">
 
-    	<button class="btn btn-outline-secondary" type="submit" id="button-addon2">Pesquisar</button>
+    		<button class="btn btn-outline-secondary" type="submit" id="button-addon2">Pesquisar</button>
 	   </div>
   
-
+  </div>
 
 
     </form>
@@ -478,7 +478,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
  <form action="salvardadosnopedido.php" method="POST" id="regForm" >
 
-<div class="tab"> Dados do Endereço
+<div class="tab"> 
            
                 <input type="text" name="cep"readonly class="form-control-plaintext invisible" id="staticcep" value="<?php echo $cep; ?>" placeholder="Cep..." oninput="this.className = ''" >
 

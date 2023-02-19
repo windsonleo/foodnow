@@ -458,7 +458,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	      
 	       <form action="<?php echo $_SERVER['PHP_SELF'];?>" method="POST" id="pesquisacep">
 
-   <div class="row text-center">  
+   <div class="row">  
 	   <div class="col sm-4">  
 	   
 	  	 <input name="cepconsulta" type="text" class="form-control" placeholder="Digite o Cep" aria-label="Digite o Cep" aria-describedby="button-addon2" value="<?php echo $cep; ?>">
@@ -528,8 +528,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </div>
              
 
-div class="col-md-3 mb-3">
-      <label for="staticlocalidade">lOCALIDADE</label
+<div class="col-md-3 mb-3">
+		      <label for="staticlocalidade">lOCALIDADE</label>
                  <input type="text"  class="form-control" id="staticlocalidade" value="<?php echo $localidade; ?>" placeholder="Cidade..." oninput="this.className = ''" name="localidade">
 <div class="invalid-feedback">
         Please provide a valid LOCALIDADE.

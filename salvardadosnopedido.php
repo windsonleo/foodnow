@@ -124,7 +124,7 @@ $_SESSION['carrinho']=$carrinho;
 
 
 
-  $sqlcliente = pg_query($conn,"select * from cliente where telefone = '{$telefone}';") or die("Erro");
+/*  $sqlcliente = pg_query($conn,"select * from cliente where telefone = '{$telefone}';") or die("Erro");
 
 while($dadoscli = pg_fetch_assoc($sqlcliente)){
 
@@ -164,7 +164,7 @@ while($dadoscli = pg_fetch_assoc($sqlcliente)){
       $totalitenscarrinho = $carrinho -> CalcularTotalItens();
       $totalvalorcarrinho = $carrinho -> CalcularTotal();
 	  $carrinho->settotalitens($totalitenscarrinho);
-	  $carrinho->settotalvalor($totalvalorcarrinho);
+	  $carrinho->settotalvalor($totalvalorcarrinho);*/
 
   $_SESSION['endereco_id'] = $enderecoaux ;
 
@@ -175,10 +175,10 @@ while($dadoscli = pg_fetch_assoc($sqlcliente)){
 	
 	$_SESSION['totalvalor'] = $totalvalorcarrinho;
 
-  $_SESSION['endereco'] = $cliente->get_endereco();
+  $_SESSION['endereco'] = $clienteaux->get_endereco();
   $_SESSION['temendereco']=true;
 
-  $_SESSION['tel'] = $cliente->gettelefone();
+  $_SESSION['tel'] = $clienteaux->gettelefone();
 
   $_SESSION['existecliente']=true;
 

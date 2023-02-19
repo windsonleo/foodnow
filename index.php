@@ -274,6 +274,19 @@ $_SESSION['existecliente']=$existecliente;
 
 }
  
+   if(isset($_SESSION['cep'])){
+
+        $cep = $_SESSION['cep'];
+
+
+  }else {
+
+
+    $_SESSION['cep']=54490430;
+
+
+}
+ 
  
 
 ?>

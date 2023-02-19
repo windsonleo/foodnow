@@ -457,22 +457,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	   
 	      
 	       <form action="<?php echo $_SERVER['PHP_SELF'];?>" method="POST" id="pesquisacep">
-
-   <div class="row">  
-	   <div class="col sm-4">  
-	   
-	  	 <input name="cepconsulta" type="text" class="form-control" placeholder="Digite o Cep" aria-label="Digite o Cep" aria-describedby="button-addon2" value="<?php echo $cep; ?>">
-	   </div>
-	   
-	   <div class="col sm-6">
-
-    		<button class="btn btn-outline-secondary" type="submit" id="button-addon2">Pesquisar</button>
-	   </div>
-  
-  </div>
+		       
+		<div class="input-group mb-3">
+		  <input type="text" name="cepconsulta" class="form-control" placeholder="Digite o Cep" aria-label="Digite o Cep" aria-describedby="button-addon2" value="<?php echo $cep; ?>">
+		  <div class="input-group-append">
+		    <button class="btn btn-outline-secondary" type="submit">enviar</button>
+		  </div>
+		</div>
+		     
 
 
-    </form>
+    		</form>
 	    
 
 

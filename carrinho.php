@@ -334,7 +334,7 @@ $total = $preco * $qtd;
 
 
 					<td class="text-truncate"> 
-						<a href="#" class="btn btn-outline-warnning btn-sm"> Obs</a> 
+						<a href="#" class="btn btn-outline-warning btn-sm"> Obs</a> 
 
  <a href="excluiritem.php?iditem=<?php echo $id; ?>" class="btn btn-outline-danger btn-sm"> excluir</a>
 

@@ -141,6 +141,7 @@ if(isset($_SESSION['carrinho'])){
 
 <body>
 
+
 <?php include '../headersembanneradm.php';?>
 
 
@@ -152,15 +153,79 @@ if(isset($_SESSION['carrinho'])){
 
    <div class="container">
 
-      <div class="heading_container heading_center">
-        <h2>
-         Adm
-        </h2>
-      </div>
+   
 
       <div class="row">
 
+<div class="card-group">
+  <div class="card">
+    <img class="card-img-top" src="../images/cliente.jpg" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title">Clientes</h5>
+      <p class="card-text">Manutenção de Clientes.</p>
+      <a href="cliente.php" class="btn btn-primary">entrar</a>
+    </div>
+    <div class="card-footer">
+      <small class="text-muted">Last updated 3 mins ago</small>
+    </div>
+  </div>
+  <div class="card">
+    <img class="card-img-top" src="../images/produto.jpg" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title">Produtos</h5>
+       <p class="card-text">Manutenção de Produtos.</p>
+      <a href="produto.php" class="btn btn-primary">entrar</a>
+    </div>
+    <div class="card-footer">
+      <small class="text-muted">Last updated 3 mins ago</small>
+    </div>
+  </div>
+  <div class="card">
+    <img class="card-img-top" src="../images/categoria.jpg" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title">Categoria</h5>
+      <p class="card-text">Manutenção de Categoria.</p>
+      <a href="categoria/categoria.php" class="btn btn-primary">entrar</a>
+    </div>
+    <div class="card-footer">
+      <small class="text-muted">Last updated 3 mins ago</small>
+    </div>
+  </div>
+    <div class="card">
+    <img class="card-img-top" src="../images/empresa.jpg" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title">Empresa</h5>
+      <p class="card-text">Manutenção de Empresa.</p>
+      <a href="empresa.php" class="btn btn-primary">entrar</a>
+    </div>
+    <div class="card-footer">
+      <small class="text-muted">Last updated 3 mins ago</small>
+    </div>
+  </div>
 
+    <div class="card">
+    <img class="card-img-top" src="../images/cliente.jpg" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title">Usuario</h5>
+      <p class="card-text">Manutenção de Usuario.</p>
+      <a href="usuario.php" class="btn btn-primary">entrar</a>
+    </div>
+    <div class="card-footer">
+      <small class="text-muted">Last updated 3 mins ago</small>
+    </div>
+  </div>
+    <div class="card">
+    <img class="card-img-top" src="../images/pedido.png" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title">Pedido</h5>
+      <p class="card-text">Manutenção de Pedido.</p>
+      <a href="pedido.php" class="btn btn-primary">entrar</a>
+    </div>
+    <div class="card-footer">
+      <small class="text-muted">Last updated 3 mins ago</small>
+    </div>
+  </div>
+</div>
       
 
 

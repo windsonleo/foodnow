@@ -43,11 +43,11 @@ $result = pg_query($conn, $sql);
 $row = pg_num_rows($result);
 $categoria = pg_fetch_assoc($result);
 
-echo 'caategoria' .$categoria;
+var_dump($categoria);
 
   pg_close($conn);
 
-   header("Location: http://foodnow.com/adm/categoria/categoria.php");
+   header("Location: https://foodnow-production.up.railway.app/adm/categoria/categoria.php");
    exit();
 
 }

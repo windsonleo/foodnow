@@ -1,6 +1,6 @@
 <?php
    // include('db.php');
-    $pasta = "../../images/categoria/";
+    $pasta = "/images/categoria/";
 
   /* formatos de imagem permitidos */
     $permitidos = array(".jpg",".jpeg",".gif",".png", ".bmp");
@@ -25,9 +25,11 @@
             if($tamanho < 1024){ //se imagem for até 1MB envia
                 $nome_atual = md5(uniqid(time())).$ext; //nome que dará a imagem
                 $tmp = $_FILES['foto']['tmp_name']; //caminho temporário da imagem
+               
+               $root = getcwd();
 
                 /* se enviar a foto, insere o nome da foto no banco de dados */
-                if(move_uploaded_file($tmp,$pasta.$nome_atual)){
+                if(move_uploaded_file($tmp,$root.$pasta.$nome_atual)){
                   //  mysql_query("INSERT INTO fotos (foto) VALUES (".$nome_atual.")");
                     echo "<img src='../../images/categoria/".$nome_atual."' id='previsualizar' style='width: 30%;height: auto;'>"; //imprime a foto na tela
                         $_SESSION['nomefoto'] = $nome_atual;

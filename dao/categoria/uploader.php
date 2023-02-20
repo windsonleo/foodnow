@@ -27,6 +27,8 @@
                 $tmp = $_FILES['foto']['tmp_name']; //caminho temporário da imagem
                
                $root = getcwd();
+               
+               var_dump($root);
 
                 /* se enviar a foto, insere o nome da foto no banco de dados */
                 if(move_uploaded_file($tmp,$root.$pasta.$nome_atual)){

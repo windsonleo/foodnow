@@ -33,7 +33,7 @@ InserirCategoria($ativo,$nome,$foto,$conn);
  function InserirCategoria($ativo,$nome,$foto,$conexao){
   $conn = $conexao;
 
-$sql = "INSERT INTO categoria (id, ativo, nome, foto,dataregistro)
+$sql = "INSERT INTO categoria (ativo, nome, foto,dataregistro)
 VALUES ( '$ativo', '$nome', '$foto' , now())";
 
 

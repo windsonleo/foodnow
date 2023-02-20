@@ -1,6 +1,6 @@
 <?php
    // include('db.php');
-    $pasta = "/images/categoria/";
+    $pasta = "/app/images/categoria/";
 
   /* formatos de imagem permitidos */
     $permitidos = array(".jpg",".jpeg",".gif",".png", ".bmp");
@@ -26,9 +26,9 @@
                 $nome_atual = md5(uniqid(time())).$ext; //nome que dará a imagem
                 $tmp = $_FILES['foto']['tmp_name']; //caminho temporário da imagem
                
-               $root = getcwd();
+              // $root = getcwd();
                
-               var_dump($root);
+               //var_dump($root);
 
                 /* se enviar a foto, insere o nome da foto no banco de dados */
                 if(move_uploaded_file($tmp,$pasta.$nome_atual)){

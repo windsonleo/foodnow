@@ -1,6 +1,6 @@
 <?php
    // include('db.php');
-    $pasta = "https://foodnow-production.up.railway.app/images/categoria/";
+    $pasta = "../images/categoria/";
 
   /* formatos de imagem permitidos */
     $permitidos = array(".jpg",".jpeg",".gif",".png", ".bmp");
